@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:julie-manhaudier.my.canva.site)",
+      "Bash(mkdir -p /Users/juliemanhaudier/Desktop/my-site/.claude)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(ls /opt/homebrew/bin/ 2>/dev/null | grep -E \"python|node|ruby|php\" | head -10)",
+      "Bash(open /Users/juliemanhaudier/Desktop/my-site/index.html)",
+      "WebFetch(domain:www.wallofportfolios.in)",
+      "WebFetch(domain:truus.co)",
+      "WebFetch(domain:agatheclement.fr)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3333/)",
+      "Read(//Users/juliemanhaudier/Desktop/**)",
+      "Read(//Users/juliemanhaudier/**)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(pkill -f \"http.server\")",
+      "Bash(open http://localhost:3333)",
+      "Bash(pkill -f \"python3.*3333\")",
+      "Bash(python3 /Users/juliemanhaudier/Desktop/my-site/serve.py)"
+    ]
+  }
+}

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julie Manhaudier — Content & Marketing</title>
+  <meta name="description" content="Julie Manhaudier — Content strategist, video producer & digital marketer. Turning ideas into content that converts." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body class="is-loading">
+
+  <!-- ── CURSOR ── -->
+  <div class="cursor" id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="cursor-label" id="cursor-label"></div>
+  </div>
+
+  <!-- ── LOADER ── -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <p class="loader-name">Julie Manhaudier</p>
+      <div class="loader-bar"><div class="loader-fill" id="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">JM</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact" class="nav-cta magnetic">Let's talk →</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="noise"></div>
+    <div class="hero-left">
+      <h1 class="hero-title">
+        <span class="line-wrap"><span class="line-inner">From <em><span id="hw1"></span><span class="h-cur" id="hcur1">|</span></em></span></span>
+        <span class="line-wrap"><span class="line-inner" style="white-space:nowrap">to <em><span id="hw2"></span><span class="h-cur" id="hcur2">|</span><span class="h-dot" id="h-dot">.</span></em></span></span>
+      </h1>
+      <p class="hero-sub reveal-fade">Hi, I'm <strong>Julie Manhaudier.</strong><br/>A content creator helping brands turn ideas into content that connects and converts.</p>
+      <div class="hero-actions reveal-fade">
+        <a href="#work" class="btn btn-dark">See my work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="hero-available reveal-fade">
+        <span class="avail-dot"></span>
+        Available for new opportunities
+      </div>
+      <p class="hero-location reveal-fade">📍 Based in Málaga, Spain</p>
+    </div>
+
+    <div class="hero-right reveal-fade">
+      <div class="phone-scene" id="phone-scene">
+        <div class="phone-glow"></div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <video class="phone-video" src="intro.mp4" autoplay muted loop playsinline></video>
+          </div>
+        </div>
+        <div class="float-badge float-1">🎬 Video Production</div>
+        <div class="float-badge float-2">🎯 Lead Generation</div>
+        <div class="float-badge float-3">📈 Growth Marketing</div>
+        <div class="float-badge float-4">📱 Social Media Strategy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num" data-target="850" data-suffix="K+">0</span>
+        <span class="stat-lbl">Instagram accounts reached</span>
+        <span class="stat-co">Festival de Cine Francés de Málaga</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="333" data-suffix="%↑">0</span>
+        <span class="stat-lbl">TikTok views growth</span>
+        <span class="stat-co">Paris Match Belgique</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="193" data-suffix="%↑">0</span>
+        <span class="stat-lbl">Instagram interactions</span>
+        <span class="stat-co">Alianza Francesa de Málaga</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="80" data-suffix="+">0</span>
+        <span class="stat-lbl">Leads generated</span>
+        <span class="stat-co">Alianza Francesa de Málaga</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <section id="about" class="section-light">
+    <div class="container">
+      <div class="section-tag reveal-up">About</div>
+      <div class="about-grid">
+        <div class="about-left">
+          <h2 class="display-heading">
+            <span class="line-wrap"><span class="line-inner">Hi, I'm Julie.</span></span>
+          </h2>
+          <div class="about-body reveal-up">
+            <p>Everything began when I was nine, filming on a Nintendo DSi. Then my phone took over, until at 18 I bought my first real camera. Trips, friends, whatever was in front of me: I filmed it all and taught myself to edit it into stories. I never really stopped.</p>
+            <p>I'm French, and a year ago a one-year job opportunity brought me to Málaga. I fell in love with the city and the people I met here, so I've decided to stay and see where this adventure takes me.</p>
+            <p>When I'm not behind a camera or a screen, I'm probably running by the sea, playing football or tennis, or convincing someone to be in my next video.</p>
+          </div>
+          <div class="about-langs reveal-up">
+            <div class="lang-pill">🇫🇷 French — Native</div>
+            <div class="lang-pill">🇬🇧 English — B2</div>
+            <div class="lang-pill">🇪🇸 Spanish — B1+</div>
+          </div>
+          <div class="open-card reveal-up" style="margin-top:1.5rem">
+            <p class="card-label">Open to</p>
+            <div class="open-chips">
+              <span>Social Media Manager</span>
+              <span>Content Creator</span>
+              <span>Community Manager</span>
+              <span>Digital Marketing Specialist</span>
+              <span>Video Editor</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="photo-stack">
+            <div class="photo-tilt" style="--r:-6deg; --i:0">
+              <div class="photo-tilt-inner">
+                <img src="1.JPG" alt="Julie" />
+                <div class="photo-shine"></div>
+              </div>
+            </div>
+            <div class="photo-tilt" style="--r:4deg; --i:1">
+              <div class="photo-tilt-inner">
+                <img src="2.JPG" alt="Julie" />
+                <div class="photo-shine"></div>
+              </div>
+            </div>
+            <div class="photo-tilt" style="--r:-3deg; --i:2">
+              <div class="photo-tilt-inner">
+                <img src="3.JPG" alt="Julie" />
+                <div class="photo-shine"></div>
+              </div>
+            </div>
+            <div class="photo-tilt" style="--r:5deg; --i:3">
+              <div class="photo-tilt-inner">
+                <img src="4.jpg" alt="Julie" />
+                <div class="photo-shine"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section id="services" class="section-dark">
+    <div class="container">
+      <div class="section-tag section-tag-light reveal-up">Services</div>
+      <h2 class="display-heading display-heading-light">
+        <span class="line-wrap"><span class="line-inner">The full funnel,</span></span>
+        <span class="line-wrap"><span class="line-inner"><em>from content</em></span></span>
+        <span class="line-wrap"><span class="line-inner"><em>to conversion.</em></span></span>
+      </h2>
+      <div class="services-grid">
+        <div class="service-card reveal-up">
+          <span class="s-num">01</span>
+          <h3>Content Strategy</h3>
+          <p>Editorial calendars, brand voice, content pillars. Structure that makes content consistent and purposeful.</p>
+          <ul><li>Editorial calendars</li><li>Content audits</li><li>Brand storytelling</li></ul>
+        </div>
+        <div class="service-card reveal-up">
+          <span class="s-num">02</span>
+          <h3>Video Production</h3>
+          <p>End-to-end video — brief to publish. Reels, interviews, ad creatives, educational content.</p>
+          <ul><li>Shooting & directing</li><li>Editing (Premiere Pro)</li><li>Reels / Shorts / TikToks</li></ul>
+        </div>
+        <div class="service-card reveal-up">
+          <span class="s-num">03</span>
+          <h3>Social Media Management</h3>
+          <p>Full account management — content, scheduling, community and analytics. Growth that actually matters.</p>
+          <ul><li>Instagram, TikTok, Facebook</li><li>Community management</li><li>Performance reporting</li></ul>
+        </div>
+        <div class="service-card service-accent reveal-up">
+          <span class="s-num">04</span>
+          <h3>Paid Ads & Lead Gen</h3>
+          <p>Turning content into conversions. I create and run campaigns designed to generate real leads — and track every number.</p>
+          <ul><li>Video ad campaigns</li><li>Lead generation funnels</li><li>Conversion tracking</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MARQUEE ── -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span>Premiere Pro</span><span class="mx">✦</span>
+      <span>Photoshop</span><span class="mx">✦</span>
+      <span>Illustrator</span><span class="mx">✦</span>
+      <span>Figma</span><span class="mx">✦</span>
+      <span>Canva</span><span class="mx">✦</span>
+      <span>WordPress</span><span class="mx">✦</span>
+      <span>Mailchimp</span><span class="mx">✦</span>
+      <span>Google Analytics</span><span class="mx">✦</span>
+      <span>SEMrush</span><span class="mx">✦</span>
+      <span>Screaming Frog</span><span class="mx">✦</span>
+      <span>Ubersuggest</span><span class="mx">✦</span>
+      <span>Office 365</span><span class="mx">✦</span>
+      <!-- duplicate for seamless loop -->
+      <span>Premiere Pro</span><span class="mx">✦</span>
+      <span>Photoshop</span><span class="mx">✦</span>
+      <span>Illustrator</span><span class="mx">✦</span>
+      <span>Figma</span><span class="mx">✦</span>
+      <span>Canva</span><span class="mx">✦</span>
+      <span>WordPress</span><span class="mx">✦</span>
+      <span>Mailchimp</span><span class="mx">✦</span>
+      <span>Google Analytics</span><span class="mx">✦</span>
+      <span>SEMrush</span><span class="mx">✦</span>
+      <span>Screaming Frog</span><span class="mx">✦</span>
+    </div>
+  </div>
+
+  <!-- ── WORK ── -->
+  <section id="work" class="section-light">
+    <div class="container">
+      <div class="section-tag reveal-up">Work</div>
+      <h2 class="display-heading">
+        <span class="line-wrap"><span class="line-inner">Selected</span></span>
+        <span class="line-wrap"><span class="line-inner"><em>experiences.</em></span></span>
+      </h2>
+
+      <div class="work-list">
+
+        <div class="work-item reveal-up">
+          <div class="work-item-head">
+            <div class="work-item-left">
+              <span class="work-year">2025 — 2026</span>
+              <h3>Communications & Content Officer</h3>
+              <p class="work-co">Alianza Francesa de Málaga · Spain</p>
+            </div>
+            <span class="work-tag">1 year</span>
+          </div>
+          <div class="work-item-body">
+            <p>Created and produced <em>Rendez-vous</em>, an original video interview series — 6 episodes from A to Z. Full ownership of content strategy, editorial calendar, 30+ carousels, and a video ad campaign generating 80+ qualified leads.</p>
+            <div class="work-kpis">
+              <div class="kpi"><b data-target="84" data-suffix="%↑" class="kpi-num">+84%</b><small>Video views</small></div>
+              <div class="kpi"><b data-target="105" data-suffix="%↑" class="kpi-num">+105%</b><small>Interactions</small></div>
+              <div class="kpi"><b class="kpi-num">80+</b><small>Leads generated</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item reveal-up">
+          <div class="work-item-head">
+            <div class="work-item-left">
+              <span class="work-year">Jun — Nov 2025</span>
+              <h3>Communications & Cinema Assistant</h3>
+              <p class="work-co">Festival de Cine Francés de Málaga · Spain</p>
+            </div>
+            <span class="work-tag">6 months</span>
+          </div>
+          <div class="work-item-body">
+            <p>Produced promotional video content across the festival. Managed 18 volunteers, oversaw screenings at Museo Pompidou, coordinated full festival logistics.</p>
+            <div class="work-kpis">
+              <div class="kpi"><b class="kpi-num">850K+</b><small>Accounts reached</small></div>
+              <div class="kpi"><b class="kpi-num">16,000+</b><small>Attendees</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item reveal-up">
+          <div class="work-item-head">
+            <div class="work-item-left">
+              <span class="work-year">Apr — Jul 2024</span>
+              <h3>Communication Assistant</h3>
+              <p class="work-co">Paris Match Belgique · Brussels · Internship</p>
+            </div>
+            <span class="work-tag">4 months</span>
+          </div>
+          <div class="work-item-body">
+            <p>Launched a short-form video strategy for one of France's most iconic media brands. Deep social data analysis to drive strategic decisions across all platforms.</p>
+            <div class="work-kpis">
+              <div class="kpi"><b class="kpi-num">+253%</b><small>Instagram reach</small></div>
+              <div class="kpi"><b class="kpi-num">+333%</b><small>TikTok views</small></div>
+              <div class="kpi"><b class="kpi-num">+225%</b><small>Facebook reach</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item work-item-sm reveal-up">
+          <div class="work-item-head">
+            <div class="work-item-left">
+              <span class="work-year">Apr — Jun 2023</span>
+              <h3>SEO Manager</h3>
+              <p class="work-co">Communauté de communes Val'Eyrieux · Internship</p>
+            </div>
+            <span class="work-tag">3 months</span>
+          </div>
+        </div>
+
+        <div class="work-item work-item-sm reveal-up">
+          <div class="work-item-head">
+            <div class="work-item-left">
+              <span class="work-year">May — Jun 2022</span>
+              <h3>Corporate Communications Manager</h3>
+              <p class="work-co">SOHTNAM GROUP · Internship</p>
+            </div>
+            <span class="work-tag">2 months</span>
+          </div>
+        </div>
+
+        <div class="work-item work-item-sm reveal-up">
+          <div class="work-item-head">
+            <div class="work-item-left">
+              <span class="work-year">Jan 2023</span>
+              <h3>Research & Competitive Intelligence — <em>Finalist, 300+ audience</em></h3>
+              <p class="work-co">IUT2 Grenoble · University project</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section id="education" class="section-cream">
+    <div class="container">
+      <div class="section-tag reveal-up">Education</div>
+      <div class="edu-grid">
+        <div class="edu-main reveal-up">
+          <span class="work-year">2021 — 2024 · IUT2 Grenoble</span>
+          <h3>Bachelor of Technology<br/><em>Information & Communication</em></h3>
+          <ul class="edu-list">
+            <li>Digital content creation & editorial strategy</li>
+            <li>SEO, data visualisation & web analytics</li>
+            <li>Project management & community coordination</li>
+            <li>Legal aspects of information and data</li>
+          </ul>
+        </div>
+        <div class="edu-side">
+          <div class="edu-card reveal-up">
+            <span class="work-year">2021</span>
+            <h4>Baccalauréat — Merit</h4>
+            <p>Geopolitics · Applied Languages · Economics</p>
+          </div>
+          <div class="edu-card reveal-up">
+            <span class="work-year">Certification</span>
+            <h4>Cambridge English B1</h4>
+            <p>Professional B2 fluency in practice</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills" class="section-light">
+    <div class="container">
+      <div class="section-tag reveal-up">Skills</div>
+      <h2 class="display-heading">
+        <span class="line-wrap"><span class="line-inner">Tools &</span></span>
+        <span class="line-wrap"><span class="line-inner"><em>expertise.</em></span></span>
+      </h2>
+      <div class="skills-grid">
+        <div class="skill-col reveal-up">
+          <h4>Creative</h4>
+          <ul>
+            <li>Video production (A to Z)</li>
+            <li>Photography</li>
+            <li>Visual content design</li>
+            <li>Carousel creation</li>
+            <li>Newsletter writing</li>
+          </ul>
+        </div>
+        <div class="skill-col reveal-up">
+          <h4>Strategy & Marketing</h4>
+          <ul>
+            <li>Editorial strategy</li>
+            <li>Social media management</li>
+            <li>Paid ads & lead generation</li>
+            <li>SEO audit & copywriting</li>
+            <li>Competitive benchmarking</li>
+          </ul>
+        </div>
+        <div class="skill-col reveal-up">
+          <h4>Analytics</h4>
+          <ul>
+            <li>Social media analytics</li>
+            <li>Google Analytics</li>
+            <li>Performance reporting</li>
+            <li>Audience insight analysis</li>
+            <li>Conversion tracking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section-dark">
+    <div class="container">
+      <div class="contact-wrap">
+        <div class="section-tag section-tag-light reveal-up">Contact</div>
+        <h2 class="display-heading display-heading-light contact-heading">
+          <span class="line-wrap"><span class="line-inner">Let's build</span></span>
+          <span class="line-wrap"><span class="line-inner"><em>something</em></span></span>
+          <span class="line-wrap"><span class="line-inner"><em>together.</em></span></span>
+        </h2>
+        <p class="contact-sub reveal-up">Available for full-time roles, freelance projects, and creative collaborations — in Málaga, remote, or internationally.</p>
+        <div class="contact-links reveal-up">
+          <a href="mailto:julie.manhaudier@gmail.com" class="btn btn-light magnetic">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Email me
+          </a>
+          <a href="https://www.linkedin.com/in/julie-manhaudier" target="_blank" rel="noopener" class="btn btn-ghost-light magnetic">LinkedIn ↗</a>
+          <a href="https://www.instagram.com/juliemanhaudier" target="_blank" rel="noopener" class="btn btn-ghost-light magnetic">Instagram ↗</a>
+        </div>
+        <p class="contact-location reveal-up">📍 Málaga, Spain · Open to relocation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <span class="nav-logo">JM</span>
+      <p>Julie Manhaudier · 2026</p>
+      <p class="footer-right">Content & Marketing</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

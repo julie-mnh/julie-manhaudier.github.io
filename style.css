@@ -554,6 +554,7 @@ body.cursor-label-on .cursor-label { opacity: 1; }
   color: var(--accent2); line-height: 1;
 }
 .stat-lbl { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: .25rem; }
+.stat-lbl em { font-style: normal; color: var(--accent); opacity: 0.85; }
 .stat-co  {
   font-size: 0.68rem;
   font-family: var(--mono);

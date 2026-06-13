@@ -7,6 +7,8 @@ const heroPairs = [
   { w1: 'idea',    w2: 'impact'      },
   { w1: 'script',  w2: 'screen'      },
   { w1: 'stories', w2: 'communities' },
+  { w1: 'scroll',  w2: 'connection'  },
+  { w1: 'content', w2: 'conversion'  },
 ];
 let hIdx = 0, hPhase = 'typing', hChar = 0;
 const hw1   = document.getElementById('hw1');

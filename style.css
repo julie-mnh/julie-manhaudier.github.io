@@ -578,7 +578,7 @@ body.cursor-label-on .cursor-label { opacity: 1; }
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 4rem;
-  align-items: start;
+  align-items: center;
 }
 .about-body p { font-size: 0.97rem; color: var(--ink2); margin-bottom: 1rem; line-height: 1.8; }
 .about-langs { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
@@ -605,8 +605,8 @@ body.cursor-label-on .cursor-label { opacity: 1; }
 .about-right {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
+  justify-content: flex-end;
+  padding: 2rem 1rem 2rem 0;
 }
 
 .photo-stack {
@@ -615,6 +615,75 @@ body.cursor-label-on .cursor-label { opacity: 1; }
   gap: 1.6rem;
   width: 100%;
   perspective: 1200px;
+}
+
+/* ── POLAROID STACK ── */
+.polaroid-stack {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  margin: auto;
+  cursor: pointer;
+}
+
+/* Hint animation — partial fan on load */
+@keyframes polaroid-hint {
+  0%   { transform: rotate(var(--r)) translateX(var(--tx)); }
+  40%  { transform: rotate(var(--fan-r)) translateX(calc(var(--fan-tx) * 0.45)); }
+  70%  { transform: rotate(var(--fan-r)) translateX(calc(var(--fan-tx) * 0.45)); }
+  100% { transform: rotate(var(--r)) translateX(var(--tx)); }
+}
+.polaroid.hint-animate {
+  animation: polaroid-hint 1.4s var(--ease-out) forwards;
+}
+
+.polaroid {
+  position: absolute;
+  top: 0; left: 0;
+  width: 320px;
+  background: #fff;
+  padding: 10px 10px 38px 10px;
+  box-shadow: 0 4px 20px rgba(13,13,13,0.14), 0 1px 4px rgba(13,13,13,0.08);
+  transform: rotate(var(--r, 0deg)) translateX(var(--tx, 0px));
+  transform-origin: bottom center;
+  transition: transform 0.55s var(--ease-out), box-shadow 0.4s, z-index 0s;
+  z-index: var(--z, 1);
+}
+
+.polaroid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid-caption {
+  display: block;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  color: #333;
+  margin-top: 8px;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+/* Fanned out — on hover of stack or .fanned class (mobile tap) */
+.polaroid-stack:hover .polaroid,
+.polaroid-stack.fanned .polaroid {
+  transform: rotate(var(--fan-r, 0deg)) translateX(var(--fan-tx, 0px));
+}
+.polaroid-stack:hover .polaroid-caption,
+.polaroid-stack.fanned .polaroid-caption {
+  opacity: 1;
+}
+
+/* Individual photo hover — lift to front */
+.polaroid-stack:hover .polaroid:hover,
+.polaroid-stack.fanned .polaroid:hover {
+  transform: rotate(0deg) translateX(var(--fan-tx, 0px)) translateY(-20px) scale(1.04);
+  box-shadow: 0 20px 50px rgba(13,13,13,0.22);
+  z-index: 10;
 }
 
 .photo-tilt {

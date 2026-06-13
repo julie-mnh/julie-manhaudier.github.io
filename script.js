@@ -292,6 +292,31 @@ const statObs = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.stats-bar, .work-item').forEach(el => statObs.observe(el));
 
+/* ── POLAROID STACK — tap to fan on mobile + hint animation ── */
+const polaroidStack = document.getElementById('polaroidStack');
+if (polaroidStack) {
+  polaroidStack.addEventListener('click', () => {
+    polaroidStack.classList.toggle('fanned');
+  });
+
+  // Hint: partial fan after 1.8s when stack scrolls into view
+  const hintObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          const cards = polaroidStack.querySelectorAll('.polaroid');
+          cards.forEach(c => {
+            c.classList.add('hint-animate');
+            c.addEventListener('animationend', () => c.classList.remove('hint-animate'), { once: true });
+          });
+        }, 600);
+        hintObs.unobserve(polaroidStack);
+      }
+    });
+  }, { threshold: 0.5 });
+  hintObs.observe(polaroidStack);
+}
+
 /* ── PHOTO 3D TILT — gentle scatter reveal ── */
 document.querySelectorAll('.photo-tilt').forEach(wrapper => {
   const inner = wrapper.querySelector('.photo-tilt-inner');

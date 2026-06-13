@@ -206,9 +206,19 @@ document.querySelectorAll('.nav-cta').forEach(btn => {
 
 /* ── NAV SCROLL ── */
 const navbar = document.getElementById('navbar');
+let lastScrollY = 0;
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
+  const y = window.scrollY;
+  navbar.classList.toggle('scrolled', y > 50);
+  if (y < 80) {
+    navbar.classList.remove('compact');
+  } else if (y > lastScrollY) {
+    navbar.classList.add('compact');    // scrolling down → pill
+  } else {
+    navbar.classList.remove('compact'); // scrolling up → normal
+  }
+  lastScrollY = y;
+}, { passive: true });
 
 /* ── BURGER ── */
 const burger   = document.getElementById('burger');

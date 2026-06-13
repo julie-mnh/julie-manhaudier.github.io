@@ -144,20 +144,80 @@ body.cursor-label-on .cursor-label { opacity: 1; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.2rem 2.5rem;
-  transition: background .4s var(--ease-out), border-color .4s;
+  transition:
+    background .5s var(--ease-out),
+    border-color .5s,
+    padding .5s var(--ease-out);
   border-bottom: 1px solid transparent;
 }
 #navbar.scrolled {
-  background: rgba(248,246,242,0.92);
-  backdrop-filter: blur(14px);
-  border-bottom-color: var(--border);
+  background: rgba(248,246,242,0.0);
+  border-bottom-color: transparent;
 }
+
+/* ── PILL — appears when scrolling down ── */
+.nav-pill {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%) scale(0.85);
+  display: flex; align-items: center; gap: 0;
+  background: rgba(20,20,20,0.82);
+  backdrop-filter: blur(18px);
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition:
+    opacity .45s var(--ease-out),
+    transform .45s var(--ease-out);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+#navbar.compact .nav-pill {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.nav-pill .pill-logo {
+  font-family: var(--serif);
+  font-size: 0.95rem; font-weight: 700;
+  color: rgba(255,255,255,0.92);
+  letter-spacing: -0.01em;
+  padding-right: 1.1rem;
+  margin-right: 1.1rem;
+  border-right: 1px solid rgba(255,255,255,0.18);
+}
+.nav-pill .pill-links {
+  display: flex; gap: 1.4rem; list-style: none; align-items: center;
+}
+.nav-pill .pill-links a {
+  font-size: 0.82rem; font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  transition: color .2s;
+}
+.nav-pill .pill-links a:hover { color: #fff; }
+.nav-pill .pill-links .nav-cta {
+  padding: 0.3rem 0.85rem !important;
+  background: rgba(255,255,255,0.12) !important;
+  color: rgba(255,255,255,0.92) !important;
+  font-size: 0.82rem;
+}
+.nav-pill .pill-links .nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+
+/* Normal logo & links fade out when compact */
 .nav-logo {
   font-family: var(--serif);
-  font-size: 1.3rem; font-weight: 900;
+  font-size: 1.15rem; font-weight: 900;
   color: var(--ink); letter-spacing: -0.02em;
+  transition: opacity .4s var(--ease-out);
 }
-.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+#navbar.compact .nav-logo,
+#navbar.compact .nav-links,
+#navbar.compact .burger {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; transition: gap .5s var(--ease-out); }
 .nav-links a {
   font-size: 0.87rem; font-weight: 500;
   color: var(--ink2);

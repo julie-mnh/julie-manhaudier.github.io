@@ -963,6 +963,12 @@ footer p { font-size: .78rem; color: rgba(255,255,255,0.3); }
 /* ════════════════════════
    RESPONSIVE
 ════════════════════════ */
+/* ── TOUCH DEVICES — hide custom cursor ── */
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring, .cursor-label { display: none !important; }
+  * { cursor: auto !important; }
+}
+
 @media (max-width: 1100px) {
   .float-1 { right: -110px; }
   .float-2 { right: -100px; }
@@ -977,23 +983,56 @@ footer p { font-size: .78rem; color: rgba(255,255,255,0.3); }
   .hero-right { justify-content: center; }
   .float-badge { display: none; }
   .about-grid  { grid-template-columns: 1fr; gap: 3rem; }
+  .about-right { justify-content: center; }
   .services-grid { grid-template-columns: 1fr; }
-  .edu-grid    { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: repeat(2,1fr); }
   .stat-div { display: none; }
-  .stats-inner { justify-content: center; gap: 2rem; }
+  .stats-inner { justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .stat-item { text-align: center; }
+  .work-kpis { flex-wrap: wrap; gap: .75rem; }
+  .polaroid-stack { margin: 0 auto; }
 }
 
 @media (max-width: 600px) {
+  /* Nav */
   #navbar { padding: 1rem 1.5rem; }
+  #navbar.compact .nav-logo,
+  #navbar.compact .burger { opacity: 1; pointer-events: auto; }
+  #navbar.compact { padding: 1rem 1.5rem; }
+  .nav-pill { display: none; }
   .nav-links { display: none; position: fixed; inset: 0; background: var(--bg); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; z-index: 100; }
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 1.1rem; }
   .burger { display: flex; }
+
+  /* Layout */
   .container { padding: 0 1.25rem; }
-  .section-light,.section-dark,.section-cream { padding: 5rem 0; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .display-heading { font-size: 2.4rem; }
-  .phone-scene { width: 230px; }
-  .phone { width: 230px; height: 470px; }
+  .section-light, .section-dark, .section-cream { padding: 4rem 0; }
+  .display-heading { font-size: clamp(2rem, 8vw, 2.6rem); }
+
+  /* Hero */
+  .hero-title { font-size: clamp(2.4rem, 9vw, 3.2rem); }
+  .phone-scene { width: 210px; }
+  .phone { width: 210px; height: 430px; }
+  .hero-actions { flex-direction: column; align-items: center; gap: .75rem; width: 100%; }
+  .hero-actions .btn { width: 100%; max-width: 280px; text-align: center; justify-content: center; }
+
+  /* Stats */
+  .stats-bar { overflow-x: auto; }
+  .stats-inner { flex-wrap: nowrap; min-width: max-content; padding: 1.5rem 1.25rem; gap: 2rem; }
+
+  /* Polaroids */
+  .polaroid-stack { width: 240px; height: 220px; }
+  .polaroid { width: 220px; }
+
+  /* Work */
+  .work-item-head { flex-direction: column; gap: .5rem; align-items: flex-start; }
+  .work-kpis { flex-wrap: wrap; gap: .6rem; }
+  .kpi { min-width: 100px; }
+
+  /* Services */
+  .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* Contact */
+  .contact-links { flex-direction: column; align-items: center; }
+  .contact-links .btn { width: 100%; max-width: 280px; text-align: center; justify-content: center; }
 }

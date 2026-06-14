@@ -153,12 +153,7 @@ const cursorDot   = document.querySelector('.cursor-dot');
 const cursorRing  = document.querySelector('.cursor-ring');
 const cursorLabel = document.getElementById('cursor-label');
 
-// Disable custom cursor on touch devices
-if (window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(hover: none)').matches) {
-  if (cursorDot)   cursorDot.style.display   = 'none';
-  if (cursorRing)  cursorRing.style.display  = 'none';
-  if (cursorLabel) cursorLabel.style.display = 'none';
-}
+const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || ('ontouchstart' in window);
 
 let mX = window.innerWidth / 2;
 let mY = window.innerHeight / 2;
@@ -219,12 +214,14 @@ let lastScrollY = 0;
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   navbar.classList.toggle('scrolled', y > 50);
-  if (y < 80) {
+  if (window.innerWidth <= 600) {
+    navbar.classList.remove('compact');
+  } else if (y < 80) {
     navbar.classList.remove('compact');
   } else if (y > lastScrollY) {
-    navbar.classList.add('compact');    // scrolling down → pill
+    navbar.classList.add('compact');
   } else {
-    navbar.classList.remove('compact'); // scrolling up → normal
+    navbar.classList.remove('compact');
   }
   lastScrollY = y;
 }, { passive: true });

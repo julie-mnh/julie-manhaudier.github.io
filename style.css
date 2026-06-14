@@ -993,46 +993,92 @@ footer p { font-size: .78rem; color: rgba(255,255,255,0.3); }
 }
 
 @media (max-width: 600px) {
-  /* Nav */
-  #navbar { padding: 1rem 1.5rem; }
+  /* ── Nav ── */
+  #navbar {
+    padding: .85rem 1.25rem;
+    background: var(--bg) !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
   #navbar.compact .nav-logo,
   #navbar.compact .burger { opacity: 1; pointer-events: auto; }
-  #navbar.compact { padding: 1rem 1.5rem; }
+  #navbar.compact { padding: .85rem 1.25rem; }
   .nav-pill { display: none !important; opacity: 0 !important; pointer-events: none !important; }
-  .nav-links { display: none; position: fixed; inset: 0; background: var(--bg); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; z-index: 100; }
+  .nav-links {
+    display: none; position: fixed; inset: 0;
+    background: var(--bg); flex-direction: column;
+    align-items: center; justify-content: center; gap: 2.5rem; z-index: 100;
+  }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1.1rem; }
+  .nav-links a { font-size: 1.2rem; }
   .burger { display: flex; }
+  .nav-logo { font-size: .82rem; }
 
-  /* Layout */
+  /* ── Layout ── */
   .container { padding: 0 1.25rem; }
-  .section-light, .section-dark, .section-cream { padding: 4rem 0; }
-  .display-heading { font-size: clamp(2rem, 8vw, 2.6rem); }
+  .section-light, .section-dark, .section-cream { padding: 3.5rem 0; }
+  .display-heading { font-size: clamp(1.9rem, 7.5vw, 2.4rem); }
 
-  /* Hero */
-  .hero-title { font-size: clamp(2.4rem, 9vw, 3.2rem); }
-  .phone-scene { width: 210px; }
-  .phone { width: 210px; height: 430px; }
+  /* ── Hero ── */
+  #hero { padding-top: 5.5rem; gap: 2rem; }
+  .hero-title { font-size: clamp(2.1rem, 8vw, 2.8rem); line-height: 1.1; }
+  .phone-scene { width: 200px; }
+  .phone { width: 200px; height: 410px; }
   .hero-actions { flex-direction: column; align-items: center; gap: .75rem; width: 100%; }
-  .hero-actions .btn { width: 100%; max-width: 280px; text-align: center; justify-content: center; }
+  .hero-actions .btn { width: 100%; max-width: 300px; text-align: center; justify-content: center; }
+  .hero-meta-row { justify-content: center; }
 
-  /* Stats */
-  .stats-bar { overflow-x: auto; }
-  .stats-inner { flex-wrap: nowrap; min-width: max-content; padding: 1.5rem 1.25rem; gap: 2rem; }
+  /* ── Stats ── */
+  .stats-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .stats-inner { flex-wrap: nowrap; min-width: max-content; padding: 1.5rem 1.25rem; gap: 2.5rem; }
 
-  /* Polaroids */
-  .polaroid-stack { width: 240px; height: 220px; }
-  .polaroid { width: 220px; }
+  /* ── About — polaroid becomes horizontal scroll ── */
+  .about-right {
+    padding: 0;
+    justify-content: flex-start;
+    width: 100%;
+    overflow: hidden;
+  }
+  .polaroid-stack {
+    /* Switch from position:absolute stack to horizontal flex scroll */
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 1rem 1.25rem 1.5rem;
+    cursor: grab;
+  }
+  .polaroid-stack::-webkit-scrollbar { display: none; }
+  .polaroid {
+    /* Each card: fixed width, no absolute positioning */
+    position: static !important;
+    transform: none !important;
+    width: 72vw !important;
+    max-width: 260px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    z-index: auto !important;
+  }
+  /* Disable hint animation & fan on mobile */
+  .polaroid.hint-animate { animation: none !important; }
+  .polaroid-stack.fanned .polaroid { transform: none !important; }
+  .polaroid-caption { opacity: 1 !important; }
 
-  /* Work */
+  /* ── Work ── */
   .work-item-head { flex-direction: column; gap: .5rem; align-items: flex-start; }
   .work-kpis { flex-wrap: wrap; gap: .6rem; }
   .kpi { min-width: 100px; }
 
-  /* Services */
+  /* ── Services ── */
   .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .service-card { padding: 1.5rem; }
 
-  /* Contact */
+  /* ── Contact ── */
   .contact-links { flex-direction: column; align-items: center; }
-  .contact-links .btn { width: 100%; max-width: 280px; text-align: center; justify-content: center; }
+  .contact-links .btn { width: 100%; max-width: 300px; text-align: center; justify-content: center; }
 }

@@ -153,6 +153,13 @@ const cursorDot   = document.querySelector('.cursor-dot');
 const cursorRing  = document.querySelector('.cursor-ring');
 const cursorLabel = document.getElementById('cursor-label');
 
+// Disable custom cursor on touch devices
+if (window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(hover: none)').matches) {
+  if (cursorDot)   cursorDot.style.display   = 'none';
+  if (cursorRing)  cursorRing.style.display  = 'none';
+  if (cursorLabel) cursorLabel.style.display = 'none';
+}
+
 let mX = window.innerWidth / 2;
 let mY = window.innerHeight / 2;
 let rX = mX, rY = mY;

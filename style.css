@@ -964,9 +964,9 @@ footer p { font-size: .78rem; color: rgba(255,255,255,0.3); }
    RESPONSIVE
 ════════════════════════ */
 /* ── TOUCH DEVICES — hide custom cursor ── */
-@media (pointer: coarse) {
-  .cursor-dot, .cursor-ring, .cursor-label { display: none !important; }
-  * { cursor: auto !important; }
+@media (pointer: coarse), (hover: none) {
+  .cursor-dot, .cursor-ring, .cursor-label { display: none !important; opacity: 0 !important; }
+  body { cursor: auto !important; }
 }
 
 @media (max-width: 1100px) {
@@ -998,7 +998,7 @@ footer p { font-size: .78rem; color: rgba(255,255,255,0.3); }
   #navbar.compact .nav-logo,
   #navbar.compact .burger { opacity: 1; pointer-events: auto; }
   #navbar.compact { padding: 1rem 1.5rem; }
-  .nav-pill { display: none; }
+  .nav-pill { display: none !important; opacity: 0 !important; pointer-events: none !important; }
   .nav-links { display: none; position: fixed; inset: 0; background: var(--bg); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; z-index: 100; }
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 1.1rem; }

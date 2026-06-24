@@ -385,22 +385,73 @@ document.addEventListener('mouseleave', () => {
   });
 });
 
-/* ── WORK GALLERY — hover play + mobile fullscreen ── */
+/* ── WORK GALLERY — cover swap + hover preview + click fullscreen ── */
 document.querySelectorAll('.work-thumb').forEach(thumb => {
-  const video = thumb.querySelector('video');
-  if (!video) return;
+  const videoSrc = thumb.dataset.video;
+  const imageSrc = thumb.dataset.image;
+  const cover    = thumb.querySelector('img');
+  let   video    = null;
+
+  if (imageSrc) {
+    // Flyer: click opens image in new tab
+    thumb.addEventListener('click', () => window.open(imageSrc, '_blank'));
+    return;
+  }
+
+  if (!videoSrc) return;
 
   if (isTouchDevice) {
-    // Mobile: tap → fullscreen
+    // Mobile: tap → fullscreen video with sound
     thumb.addEventListener('click', () => {
-      if (video.requestFullscreen) video.requestFullscreen();
-      else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
-      video.play();
+      const v = document.createElement('video');
+      v.src = videoSrc;
+      v.controls = true;
+      v.autoplay = true;
+      v.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;background:#000;z-index:9999;object-fit:contain;';
+      document.body.appendChild(v);
+      v.play();
+      if (v.requestFullscreen) v.requestFullscreen();
+      else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+      v.addEventListener('ended', () => v.remove());
+      v.addEventListener('webkitendfullscreen', () => v.remove());
+      document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) v.remove(); }, { once: true });
     });
   } else {
-    // Desktop: hover → play/pause
-    thumb.addEventListener('mouseenter', () => video.play());
-    thumb.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+    // Desktop: hover → swap cover for muted looping video preview
+    thumb.addEventListener('mouseenter', () => {
+      if (video) { video.play(); return; }
+      video = document.createElement('video');
+      video.src = videoSrc;
+      video.muted = true;
+      video.loop  = true;
+      video.playsInline = true;
+      video.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;';
+      thumb.insertBefore(video, thumb.querySelector('.work-thumb-overlay'));
+      video.play();
+    });
+
+    thumb.addEventListener('mouseleave', () => {
+      if (video) { video.pause(); video.currentTime = 0; }
+    });
+
+    // Click → fullscreen with sound
+    thumb.addEventListener('click', () => {
+      const v = video || document.createElement('video');
+      v.src     = videoSrc;
+      v.muted   = false;
+      v.controls = true;
+      v.autoplay = true;
+      if (!v.parentElement) {
+        v.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;background:#000;z-index:9999;object-fit:contain;';
+        document.body.appendChild(v);
+      }
+      v.play();
+      if (v.requestFullscreen) v.requestFullscreen();
+      else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+      document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement && v.parentElement === document.body) v.remove();
+      }, { once: true });
+    });
   }
 });
 

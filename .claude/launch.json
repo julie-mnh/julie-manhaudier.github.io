@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "portfolio",
-      "runtimeExecutable": "/usr/bin/python3",
-      "runtimeArgs": ["-c", "import http.server,socketserver,os;os.chdir('/Users/juliemanhaudier/Desktop/my-site');socketserver.TCPServer(('',3333),http.server.SimpleHTTPRequestHandler).serve_forever()"],
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["serve.py"],
       "port": 3333
     }
   ]

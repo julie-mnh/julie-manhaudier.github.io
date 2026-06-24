@@ -385,6 +385,25 @@ document.addEventListener('mouseleave', () => {
   });
 });
 
+/* ── WORK GALLERY — hover play + mobile fullscreen ── */
+document.querySelectorAll('.work-thumb').forEach(thumb => {
+  const video = thumb.querySelector('video');
+  if (!video) return;
+
+  if (isTouchDevice) {
+    // Mobile: tap → fullscreen
+    thumb.addEventListener('click', () => {
+      if (video.requestFullscreen) video.requestFullscreen();
+      else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+      video.play();
+    });
+  } else {
+    // Desktop: hover → play/pause
+    thumb.addEventListener('mouseenter', () => video.play());
+    thumb.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+  }
+});
+
 /* ── ACTIVE NAV ── */
 const sections  = document.querySelectorAll('section[id]');
 const navItems  = document.querySelectorAll('.nav-links a:not(.nav-cta)');

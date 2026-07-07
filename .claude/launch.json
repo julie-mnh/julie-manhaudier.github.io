@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "portfolio",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["serve.py"],
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "3333", "."],
       "port": 3333
     }
   ]

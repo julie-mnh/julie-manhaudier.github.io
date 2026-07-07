@@ -2,6 +2,16 @@
    JULIE MANHAUDIER — script.js
    ════════════════════════════════════ */
 
+/* ── HOME LINKS — scroll to top instead of reloading when already on the homepage ── */
+document.querySelectorAll('a[href="index.html"]').forEach(link => {
+  link.addEventListener('click', e => {
+    if (document.getElementById('hero')) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+});
+
 /* ── HERO TYPEWRITER ── */
 const heroPairs = [
   { w1: 'idea',    w2: 'impact'      },
@@ -148,44 +158,6 @@ function heroEntrance() {
   });
 }
 
-/* ── CUSTOM CURSOR ── */
-const cursorDot   = document.querySelector('.cursor-dot');
-const cursorRing  = document.querySelector('.cursor-ring');
-const cursorLabel = document.getElementById('cursor-label');
-
-const isTouchDevice = window.matchMedia('(pointer: coarse)').matches || ('ontouchstart' in window);
-
-let mX = window.innerWidth / 2;
-let mY = window.innerHeight / 2;
-let rX = mX, rY = mY;
-let dotX = mX, dotY = mY;
-
-window.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; });
-
-(function animateCursor() {
-  // Dot — snappy
-  dotX += (mX - dotX) * 0.55;
-  dotY += (mY - dotY) * 0.55;
-  cursorDot.style.left = dotX + 'px';
-  cursorDot.style.top  = dotY + 'px';
-
-  // Ring — smooth lag
-  rX += (mX - rX) * 0.1;
-  rY += (mY - rY) * 0.1;
-  cursorRing.style.left = rX + 'px';
-  cursorRing.style.top  = rY + 'px';
-  cursorLabel.style.left = rX + 'px';
-  cursorLabel.style.top  = rY + 'px';
-
-  requestAnimationFrame(animateCursor);
-})();
-
-// Hover state on interactive elements
-document.querySelectorAll('a, button, .service-card, .work-item, .float-badge, .values-list li, .open-chips span').forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-});
-
 /* ── MAGNETIC BUTTONS — nav CTA only (isolated button) ── */
 document.querySelectorAll('.nav-cta').forEach(btn => {
   let cx = 0, cy = 0;
@@ -207,6 +179,24 @@ document.querySelectorAll('.nav-cta').forEach(btn => {
     btn.style.transform = '';
   });
 });
+
+/* ── CONTACT DROPDOWN ── */
+const contactDropdown = document.getElementById('contactDropdown');
+if (contactDropdown) {
+  document.querySelectorAll('.nav-cta').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      contactDropdown.classList.toggle('open');
+    });
+  });
+  document.addEventListener('click', e => {
+    if (contactDropdown.classList.contains('open') &&
+        !contactDropdown.contains(e.target) &&
+        !e.target.closest('.nav-cta')) {
+      contactDropdown.classList.remove('open');
+    }
+  });
+}
 
 /* ── NAV SCROLL ── */
 const navbar = document.getElementById('navbar');
@@ -294,7 +284,7 @@ const statObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.4 });
 
-document.querySelectorAll('.stats-bar, .work-item').forEach(el => statObs.observe(el));
+document.querySelectorAll('.stats-bar').forEach(el => statObs.observe(el));
 
 /* ── POLAROID STACK — tap to fan on mobile + hint animation ── */
 const polaroidStack = document.getElementById('polaroidStack');
@@ -383,76 +373,6 @@ document.addEventListener('mouseleave', () => {
     b.style.boxShadow = '';
     b.style.borderColor = '';
   });
-});
-
-/* ── WORK GALLERY — cover swap + hover preview + click fullscreen ── */
-document.querySelectorAll('.work-thumb').forEach(thumb => {
-  const videoSrc = thumb.dataset.video;
-  const imageSrc = thumb.dataset.image;
-  const cover    = thumb.querySelector('img');
-  let   video    = null;
-
-  if (imageSrc) {
-    // Flyer: click opens image in new tab
-    thumb.addEventListener('click', () => window.open(imageSrc, '_blank'));
-    return;
-  }
-
-  if (!videoSrc) return;
-
-  if (isTouchDevice) {
-    // Mobile: tap → fullscreen video with sound
-    thumb.addEventListener('click', () => {
-      const v = document.createElement('video');
-      v.src = videoSrc;
-      v.controls = true;
-      v.autoplay = true;
-      v.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;background:#000;z-index:9999;object-fit:contain;';
-      document.body.appendChild(v);
-      v.play();
-      if (v.requestFullscreen) v.requestFullscreen();
-      else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
-      v.addEventListener('ended', () => v.remove());
-      v.addEventListener('webkitendfullscreen', () => v.remove());
-      document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement) v.remove(); }, { once: true });
-    });
-  } else {
-    // Desktop: hover → swap cover for muted looping video preview
-    thumb.addEventListener('mouseenter', () => {
-      if (video) { video.play(); return; }
-      video = document.createElement('video');
-      video.src = videoSrc;
-      video.muted = true;
-      video.loop  = true;
-      video.playsInline = true;
-      video.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;';
-      thumb.insertBefore(video, thumb.querySelector('.work-thumb-overlay'));
-      video.play();
-    });
-
-    thumb.addEventListener('mouseleave', () => {
-      if (video) { video.pause(); video.currentTime = 0; }
-    });
-
-    // Click → fullscreen with sound
-    thumb.addEventListener('click', () => {
-      const v = video || document.createElement('video');
-      v.src     = videoSrc;
-      v.muted   = false;
-      v.controls = true;
-      v.autoplay = true;
-      if (!v.parentElement) {
-        v.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;background:#000;z-index:9999;object-fit:contain;';
-        document.body.appendChild(v);
-      }
-      v.play();
-      if (v.requestFullscreen) v.requestFullscreen();
-      else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
-      document.addEventListener('fullscreenchange', () => {
-        if (!document.fullscreenElement && v.parentElement === document.body) v.remove();
-      }, { once: true });
-    });
-  }
 });
 
 /* ── ACTIVE NAV ── */

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Julie Manhaudier</title>
+  <meta name="description" content="Julie Manhaudier — All projects." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet" />
+</head>
+<body class="is-loading">
+
+  <!-- ── LOADER ── -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <p class="loader-name">Julie Manhaudier</p>
+      <div class="loader-bar"><div class="loader-fill" id="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Julie Manhaudier</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#contact" class="nav-cta magnetic">Contact</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <!-- Compact pill — visible when scrolling down -->
+    <div class="nav-pill">
+      <a href="index.html" class="pill-logo">Julie Manhaudier</a>
+      <ul class="pill-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── CONTACT DROPDOWN ── -->
+  <div class="contact-dropdown" id="contactDropdown">
+    <div class="contact-dropdown-head">
+      <img src="Media/IMG_2082 2.PNG" alt="Julie Manhaudier" class="contact-dropdown-photo" />
+      <div>
+        <div class="contact-dropdown-name">Julie Manhaudier</div>
+        <span class="contact-dropdown-email">julie.manhaudier.pro@icloud.com</span>
+        <span class="contact-dropdown-phone">+33 6 17 87 18 54</span>
+      </div>
+    </div>
+    <div class="contact-dropdown-links">
+      <a href="mailto:julie.manhaudier.pro@icloud.com" class="btn btn-light magnetic">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Email
+      </a>
+      <a href="https://www.linkedin.com/in/juliemanhaudier" target="_blank" rel="noopener" class="btn btn-ghost-light magnetic">LinkedIn ↗</a>
+      <a href="https://drive.google.com/uc?export=download&id=1FhztItyk2oYnA2P6A2Z99pdHV_46Bwt1" target="_blank" rel="noopener" class="btn btn-ghost-light magnetic">Download CV ↓</a>
+    </div>
+    <a href="index.html#contact" class="contact-dropdown-more">See full contact section →</a>
+  </div>
+
+  <!-- ── PROJECTS ── -->
+  <section id="all-projects" class="section-light" style="padding-top: calc(6rem + 8rem);">
+    <div class="container">
+      <div class="section-tag reveal-up">Projects</div>
+      <h2 class="display-heading">
+        <span class="line-wrap"><span class="line-inner">All</span></span>
+        <span class="line-wrap"><span class="line-inner"><em>Projects.</em></span></span>
+      </h2>
+
+      <div class="project-grid" id="allProjectGrid"></div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <span class="nav-logo">JM</span>
+      <p>© 2026 All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="projects-data.js"></script>
+  <script>renderProjectCards('allProjectGrid', { featuredOnly: false });</script>
+  <script src="script.js"></script>
+</body>
+</html>

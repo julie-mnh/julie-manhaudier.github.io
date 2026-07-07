@@ -12,13 +12,6 @@
 </head>
 <body class="is-loading">
 
-  <!-- ── CURSOR ── -->
-  <div class="cursor" id="cursor">
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-    <div class="cursor-label" id="cursor-label"></div>
-  </div>
-
   <!-- ── LOADER ── -->
   <div class="loader" id="loader">
     <div class="loader-inner">
@@ -29,27 +22,48 @@
 
   <!-- ── NAV ── -->
   <nav id="navbar">
-    <a href="#hero" class="nav-logo">Julie Manhaudier</a>
+    <a href="index.html" class="nav-logo">Julie Manhaudier</a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#services">Expertise</a></li>
-      <li><a href="#contact" class="nav-cta magnetic">Let's talk →</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#contact" class="nav-cta magnetic">Contact</a></li>
     </ul>
     <button class="burger" id="burger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <!-- Compact pill — visible when scrolling down -->
     <div class="nav-pill">
-      <span class="pill-logo">Julie Manhaudier</span>
+      <a href="index.html" class="pill-logo">Julie Manhaudier</a>
       <ul class="pill-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#services">Expertise</a></li>
-        <li><a href="#contact" class="nav-cta">Let's talk →</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>
+
+  <!-- ── CONTACT DROPDOWN ── -->
+  <div class="contact-dropdown" id="contactDropdown">
+    <div class="contact-dropdown-head">
+      <img src="Media/IMG_2082 2.PNG" alt="Julie Manhaudier" class="contact-dropdown-photo" />
+      <div>
+        <div class="contact-dropdown-name">Julie Manhaudier</div>
+        <span class="contact-dropdown-email">julie.manhaudier.pro@icloud.com</span>
+        <span class="contact-dropdown-phone">+33 6 17 87 18 54</span>
+      </div>
+    </div>
+    <div class="contact-dropdown-links">
+      <a href="mailto:julie.manhaudier.pro@icloud.com" class="btn btn-light magnetic">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Email
+      </a>
+      <a href="https://www.linkedin.com/in/juliemanhaudier" target="_blank" rel="noopener" class="btn btn-ghost-light magnetic">LinkedIn ↗</a>
+      <a href="https://drive.google.com/uc?export=download&id=1FhztItyk2oYnA2P6A2Z99pdHV_46Bwt1" target="_blank" rel="noopener" class="btn btn-ghost-light magnetic">Download CV ↓</a>
+    </div>
+    <a href="#contact" class="contact-dropdown-more">See full contact section →</a>
+  </div>
 
   <!-- ── HERO ── -->
   <section id="hero">
@@ -61,7 +75,7 @@
       </h1>
       <p class="hero-sub reveal-fade">Hi, I'm <strong>Julie Manhaudier.</strong><br/>A content creator turning ideas into video and social content that connects and converts.</p>
       <div class="hero-actions reveal-fade">
-        <a href="#work" class="btn btn-dark">See my work</a>
+        <a href="projects.html" class="btn btn-dark">See my work</a>
         <a href="#contact" class="btn btn-ghost">Get in touch</a>
       </div>
       <div class="hero-available reveal-fade">
@@ -100,7 +114,7 @@
       <div class="stat-item">
         <span class="stat-num" data-target="333" data-suffix="%↑">0</span>
         <span class="stat-lbl">TikTok views growth <em>in just 2 months</em></span>
-        <span class="stat-co">Paris Match Belgique</span>
+        <span class="stat-co">Paris Match Belgium</span>
       </div>
       <div class="stat-div"></div>
       <div class="stat-item">
@@ -110,287 +124,29 @@
       </div>
       <div class="stat-div"></div>
       <div class="stat-item">
-        <span class="stat-num" data-target="100" data-suffix="+">0</span>
+        <span class="stat-num" data-target="150" data-suffix="+">0</span>
         <span class="stat-lbl">Leads generated via video campaign <em>in under 1 month</em></span>
         <span class="stat-co">Alianza Francesa de Málaga</span>
       </div>
     </div>
   </div>
 
-  <!-- ── ABOUT ── -->
-  <section id="about" class="section-light">
+  <!-- ── FEATURED PROJECTS ── -->
+  <section id="featured-projects" class="section-light">
     <div class="container">
-      <div class="section-tag reveal-up">About</div>
-      <div class="about-grid">
-        <div class="about-left">
-          <h2 class="display-heading">
-            <span class="line-wrap"><span class="line-inner">Hi, I'm Julie.</span></span>
-          </h2>
-          <div class="about-body reveal-up">
-            <p>Everything began when I was nine, filming on a Nintendo DSi. Then my phone took over, until at 18 I bought my first real camera. Trips, friends, school projects, whatever was in front of me: I filmed it all and taught myself to edit it into stories. I never really stopped.</p>
-            <p>I'm French, and a year ago I found a job that brought me to Málaga. I fell in love with the city and the people I met here, so I've decided to stay and see where this adventure takes me.</p>
-            <p>When I'm not behind a camera or a screen, I'm probably running by the sea, playing football or tennis, or convincing someone to be in my next video.</p>
-          </div>
-          <div class="about-langs reveal-up">
-            <div class="lang-pill">🇫🇷 French — Native</div>
-            <div class="lang-pill">🇬🇧 English — B2</div>
-            <div class="lang-pill">🇪🇸 Spanish — B2</div>
-          </div>
-          <div class="open-card reveal-up" style="margin-top:1.5rem">
-            <p class="card-label">Open to</p>
-            <div class="open-chips">
-              <span>Social Media Manager</span>
-              <span>Content Creator</span>
-              <span>Community Manager</span>
-              <span>Digital Marketing Specialist</span>
-              <span>Video Editor</span>
-            </div>
-          </div>
-        </div>
-        <div class="about-right">
-          <div class="polaroid-stack" id="polaroidStack">
-            <div class="polaroid" style="--r:-8deg; --tx:-10px; --fan-r:-12deg; --fan-tx:-60px; --z:3">
-              <img src="1.jpeg" alt="Julie" />
-              <span class="polaroid-caption">always with my camera</span>
-            </div>
-            <div class="polaroid" style="--r:2deg; --tx:0px; --fan-r:0deg; --fan-tx:0px; --z:2">
-              <img src="photo 1.png" alt="Julie" style="object-position: center 20%;" />
-              <span class="polaroid-caption">that's me</span>
-            </div>
-            <div class="polaroid" style="--r:7deg; --tx:10px; --fan-r:12deg; --fan-tx:60px; --z:1">
-              <img src="7.JPG" alt="Julie" />
-              <span class="polaroid-caption">getting the story</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── WORK ── -->
-  <section id="work" class="section-light">
-    <div class="container">
-      <div class="section-tag reveal-up">Work</div>
+      <div class="section-tag reveal-up">Projects</div>
       <h2 class="display-heading">
-        <span class="line-wrap"><span class="line-inner">Selected</span></span>
-        <span class="line-wrap"><span class="line-inner"><em>experiences.</em></span></span>
+        <span class="line-wrap"><span class="line-inner">Featured</span></span>
+        <span class="line-wrap"><span class="line-inner"><em>Projects</em></span></span>
       </h2>
 
-      <div class="work-list">
+      <div class="project-grid" id="homeProjectGrid"></div>
 
-        <!-- Alianza Francesa -->
-        <div class="work-item reveal-up">
-          <div class="work-item-head">
-            <div class="work-item-left">
-              <span class="work-year">2025 — 2026</span>
-              <h3>Communications & Content Officer</h3>
-              <p class="work-co">Alianza Francesa de Málaga · Spain</p>
-            </div>
-            <span class="work-tag">1 year</span>
-          </div>
-          <div class="work-item-body">
-            <div class="work-kpis">
-              <div class="kpi"><b data-target="130" data-suffix="%" class="kpi-num">130%</b><small>Video views</small></div>
-              <div class="kpi"><b data-target="193" data-suffix="%" class="kpi-num">193%</b><small>Interactions</small></div>
-              <div class="kpi"><b class="kpi-num">100+</b><small>Qualified leads</small></div>
-            </div>
-            <div class="work-gallery">
-
-              <div class="work-thumb-wrap">
-                <div class="work-thumb" data-video="pub.mp4">
-                  <img src="cover_summercampaign.png" alt="Summer courses" />
-                  <div class="work-thumb-overlay">
-                    <span class="work-thumb-title">Summer courses</span>
-                    <span class="work-thumb-context">Promotional video for the summer courses, produced for a paid Instagram ad campaign. Concept, filming and editing handled end to end. Generated 100+ qualified leads.</span>
-                  </div>
-                </div>
-                <p class="work-thumb-mobile-context">Promotional video for the summer courses, produced for a paid Instagram ad campaign. Concept, filming and editing handled end to end. Generated 100+ qualified leads.</p>
-              </div>
-
-              <div class="work-thumb-wrap">
-                <div class="work-thumb" data-video="rendezvous.mp4">
-                  <img src="cover_rendezvous.png" alt="Rendez-vous" />
-                  <div class="work-thumb-overlay">
-                    <span class="work-thumb-title">Rendez-vous</span>
-                    <span class="work-thumb-context">An original interview video series I created and produced at the Alianza Francesa de Málaga, highlighting artists, students, alumni and community members. Concept, filming, editing and production handled end to end.</span>
-                  </div>
-                </div>
-                <p class="work-thumb-mobile-context">An original interview video series I created and produced at the Alianza Francesa de Málaga, highlighting artists, students, alumni and community members. Concept, filming, editing and production handled end to end.</p>
-              </div>
-
-              <div class="work-thumb-wrap">
-                <div class="work-thumb" data-video="carrou.mp4">
-                  <img src="cover_carousels.png" alt="Carousels" />
-                  <div class="work-thumb-overlay">
-                    <span class="work-thumb-title">Carousels</span>
-                    <span class="work-thumb-context">The strategic format. Published weekly with educational, cultural and promotional content. Reels create visibility, carousels generate engagement and drive saves for retention.</span>
-                  </div>
-                </div>
-                <p class="work-thumb-mobile-context">The strategic format. Published weekly with educational, cultural and promotional content. Reels create visibility, carousels generate engagement and drive saves for retention.</p>
-              </div>
-
-              <div class="work-thumb-wrap">
-                <div class="work-thumb" data-video="péda.mp4">
-                  <img src="cover_educationalvideo.png" alt="Educational video" />
-                  <div class="work-thumb-overlay">
-                    <span class="work-thumb-title">Educational video</span>
-                    <span class="work-thumb-context">Produced, filmed and edited for social media, targeting Spanish-speaking audiences to promote French language learning. Concept, on-camera presenting and full production handled end to end.</span>
-                  </div>
-                </div>
-                <p class="work-thumb-mobile-context">Produced, filmed and edited for social media, targeting Spanish-speaking audiences to promote French language learning. Concept, on-camera presenting and full production handled end to end.</p>
-              </div>
-
-              <div class="work-thumb-wrap">
-                <div class="work-thumb" data-video="microtrott.mp4">
-                  <img src="cover_streetinterview.png" alt="Street interview" />
-                  <div class="work-thumb-overlay">
-                    <span class="work-thumb-title">Street interview</span>
-                    <span class="work-thumb-context">Produced, filmed and edited for social media, capturing audience reactions during the Alianza Francesa's Bastille Day celebration.</span>
-                  </div>
-                </div>
-                <p class="work-thumb-mobile-context">Produced, filmed and edited for social media, capturing audience reactions during the Alianza Francesa's Bastille Day celebration.</p>
-              </div>
-
-              <div class="work-thumb-wrap">
-                <div class="work-thumb" data-video="vlog.mp4">
-                  <img src="cover_vlog.png" alt="Vlog" />
-                  <div class="work-thumb-overlay">
-                    <span class="work-thumb-title">Vlog</span>
-                    <span class="work-thumb-context">Behind the scenes of life and events at the Alianza Francesa, in a warm and personal tone.</span>
-                  </div>
-                </div>
-                <p class="work-thumb-mobile-context">Behind the scenes of life and events at the Alianza Francesa, in a warm and personal tone.</p>
-              </div>
-
-              <div class="work-thumb-wrap">
-                <div class="work-thumb work-thumb-flyer" data-image="flyer.jpg">
-                  <img src="cover_printflyer.png" alt="Print flyer" />
-                  <div class="work-thumb-overlay">
-                    <span class="work-thumb-title">Print flyer</span>
-                    <span class="work-thumb-context">Designed for the Feria FP Hola Dual in Málaga, an event connecting young people and local companies. Goal: promote the Alianza Francesa to a Spanish-speaking audience.</span>
-                  </div>
-                </div>
-                <p class="work-thumb-mobile-context">Designed for the Feria FP Hola Dual in Málaga, an event connecting young people and local companies. Goal: promote the Alianza Francesa to a Spanish-speaking audience.</p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Festival de Cine Francés -->
-        <div class="work-item reveal-up">
-          <div class="work-item-head">
-            <div class="work-item-left">
-              <span class="work-year">Jun — Nov 2025</span>
-              <h3>Communications & Cinema Assistant</h3>
-              <p class="work-co">Festival de Cine Francés de Málaga · Spain</p>
-            </div>
-            <span class="work-tag">6 months</span>
-          </div>
-          <div class="work-item-body">
-            <div class="work-kpis">
-              <div class="kpi"><b class="kpi-num">850K+</b><small>Accounts reached</small></div>
-              <div class="kpi"><b class="kpi-num">16,000+</b><small>Attendees</small></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Paris Match Belgique -->
-        <div class="work-item reveal-up">
-          <div class="work-item-head">
-            <div class="work-item-left">
-              <span class="work-year">Apr — Jul 2024</span>
-              <h3>Communication Assistant</h3>
-              <p class="work-co">Paris Match Belgique · Brussels · Internship</p>
-            </div>
-            <span class="work-tag">4 months</span>
-          </div>
-          <div class="work-item-body">
-            <div class="work-kpis">
-              <div class="kpi"><b class="kpi-num">+253%</b><small>Instagram reach</small></div>
-              <div class="kpi"><b class="kpi-num">+333%</b><small>TikTok views</small></div>
-              <div class="kpi"><b class="kpi-num">+225%</b><small>Facebook reach</small></div>
-            </div>
-          </div>
-        </div>
-
+      <div class="projects-more reveal-up">
+        <a href="projects.html" class="btn btn-ghost">See more</a>
       </div>
     </div>
   </section>
-
-  <!-- ── EXPERTISE ── -->
-  <section id="services" class="section-dark">
-    <div class="container">
-      <div class="section-tag section-tag-light reveal-up">Expertise</div>
-      <h2 class="display-heading display-heading-light">
-        <span class="line-wrap"><span class="line-inner">The full funnel,</span></span>
-        <span class="line-wrap"><span class="line-inner"><em>from content</em></span></span>
-        <span class="line-wrap"><span class="line-inner"><em>to conversion.</em></span></span>
-      </h2>
-      <div class="services-grid">
-        <div class="service-card reveal-up">
-          <span class="s-num">01</span>
-          <h3>Content Strategy</h3>
-          <p>It starts before the first post. I analyse the existing channels, benchmark competitors and track trends, then shape a clear digital strategy: who we're talking to, what message to carry, and how to keep it consistent everywhere.</p>
-          <ul><li>Audit & analytics</li><li>Competitive benchmarking</li><li>Digital strategy & content pillars</li><li>Audience & messaging</li></ul>
-        </div>
-        <div class="service-card reveal-up">
-          <span class="s-num">02</span>
-          <h3>Video Production</h3>
-          <p>End-to-end video, from brief to publish. I shoot, host and edit, whether it's Reels, interviews, vlogs, ad creatives or educational content. Just as comfortable in front of the camera as behind it.</p>
-          <ul><li>Shooting & directing</li><li>Editing</li><li>On-camera hosting & interviews</li><li>Reels / Shorts / TikToks</li></ul>
-        </div>
-        <div class="service-card reveal-up">
-          <span class="s-num">03</span>
-          <h3>Social Media Management</h3>
-          <p>Across Instagram, TikTok, LinkedIn and YouTube, this is the day to day that keeps accounts alive and growing: I plan and schedule content, write captions, create posts and carousels, look after the community, and track what each post really does.</p>
-          <ul><li>Content planning & scheduling</li><li>Posts, carousels & captions</li><li>Community management (comments & DMs)</li><li>Performance reporting</li></ul>
-        </div>
-        <div class="service-card service-accent reveal-up">
-          <span class="s-num">04</span>
-          <h3>Paid Ads & Lead Gen</h3>
-          <p>Turning content into conversions. I create and run ad campaigns, turn the leads they bring in into real conversations, and follow every step through to actual sales.</p>
-          <ul><li>Video ad campaigns</li><li>Lead generation funnels</li><li>Lead nurturing & conversational marketing</li><li>Conversion tracking</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── MARQUEE ── -->
-  <div class="marquee-bar">
-    <div class="marquee-track">
-      <span class="marquee-label">Tools</span><span class="mx">·</span>
-      <span>Premiere Pro</span><span class="mx">✦</span>
-      <span>Photoshop</span><span class="mx">✦</span>
-      <span>CapCut</span><span class="mx">✦</span>
-      <span>Figma</span><span class="mx">✦</span>
-      <span>Canva</span><span class="mx">✦</span>
-      <span>WordPress</span><span class="mx">✦</span>
-      <span>Mailchimp</span><span class="mx">✦</span>
-      <span>Office 365</span><span class="mx">✦</span>
-      <span>Google Analytics</span><span class="mx">✦</span>
-      <span>SEMrush</span><span class="mx">✦</span>
-      <span>Ubersuggest</span><span class="mx">✦</span>
-      <span>Meta Business Suite</span><span class="mx">✦</span>
-      <span>ManyChat</span><span class="mx">✦</span>
-      <span>Beacons</span><span class="mx">✦</span>
-      <!-- duplicate for seamless loop -->
-      <span>Premiere Pro</span><span class="mx">✦</span>
-      <span>Photoshop</span><span class="mx">✦</span>
-      <span>CapCut</span><span class="mx">✦</span>
-      <span>Figma</span><span class="mx">✦</span>
-      <span>Canva</span><span class="mx">✦</span>
-      <span>WordPress</span><span class="mx">✦</span>
-      <span>Mailchimp</span><span class="mx">✦</span>
-      <span>Office 365</span><span class="mx">✦</span>
-      <span>Google Analytics</span><span class="mx">✦</span>
-      <span>SEMrush</span><span class="mx">✦</span>
-      <span>Ubersuggest</span><span class="mx">✦</span>
-      <span>Meta Business Suite</span><span class="mx">✦</span>
-      <span>ManyChat</span><span class="mx">✦</span>
-      <span>Beacons</span><span class="mx">✦</span>
-    </div>
-  </div>
 
   <!-- ── CONTACT ── -->
   <section id="contact" class="section-dark">
@@ -422,11 +178,12 @@
   <footer>
     <div class="footer-inner">
       <span class="nav-logo">JM</span>
-      <p>Julie Manhaudier · 2026</p>
-      <p class="footer-right">Content & Marketing</p>
+      <p>© 2026 All rights reserved</p>
     </div>
   </footer>
 
+  <script src="projects-data.js"></script>
+  <script>renderProjectCards('homeProjectGrid', { featuredOnly: true });</script>
   <script src="script.js"></script>
 </body>
 </html>

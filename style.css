@@ -198,7 +198,8 @@ strong { font-weight: 600; }
   position: fixed;
   top: 74px;
   right: 2.5rem;
-  width: 320px;
+  width: fit-content;
+  max-width: calc(100vw - 3rem);
   background: var(--dark);
   border-radius: 16px;
   padding: 1.4rem;
@@ -243,11 +244,12 @@ strong { font-weight: 600; }
 .contact-dropdown-links {
   display: flex;
   gap: .5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .contact-dropdown-links .btn {
-  padding: 0.5rem 0.9rem !important;
-  font-size: .8rem;
+  padding: 0.5rem 0.8rem !important;
+  font-size: .78rem;
+  white-space: nowrap;
 }
 .contact-dropdown-more {
   display: block;
@@ -261,6 +263,7 @@ strong { font-weight: 600; }
 
 @media (max-width: 600px) {
   .contact-dropdown { right: 1.25rem; left: 1.25rem; width: auto; }
+  .contact-dropdown-links { flex-wrap: wrap; }
 }
 
 .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; z-index: 110; }
@@ -863,6 +866,13 @@ strong { font-weight: 600; }
   font-size: .95rem;
   font-weight: 700;
   margin-top: .9rem;
+}
+
+.project-card-subtitle {
+  display: block;
+  font-size: .8rem;
+  color: var(--ink2);
+  margin-top: .15rem;
 }
 
 .project-card-link {

@@ -2,3 +2,7 @@
 *.MP4
 *.mov
 !intro.mp4
+!Media/rendezvous.mp4
+!Media/RV1.mp4
+!Media/RV2.mp4
+!Media/RV3.mp4

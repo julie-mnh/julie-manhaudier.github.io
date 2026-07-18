@@ -600,12 +600,13 @@ strong { font-weight: 600; }
 ════════════════════════ */
 .stats-bar {
   background: var(--bg);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 4.5rem 2.5rem;
+  padding: 3rem 2.5rem;
 }
 .stats-inner {
-  max-width: 1180px; margin: 0 auto;
+  max-width: 1040px; margin: 0 auto;
+  padding: 2.2rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   display: flex; align-items: flex-start; justify-content: space-between;
   gap: 2rem; flex-wrap: wrap;
 }
@@ -997,32 +998,48 @@ strong { font-weight: 600; }
 /* ════════════════════════
    CONTACT
 ════════════════════════ */
+.section-contact {
+  padding: 6.5rem 0 7.5rem;
+  background: var(--bg);
+}
 .contact-wrap { max-width: 780px; margin: 0 auto; text-align: center; }
-.contact-heading { margin-bottom: 2rem; }
+.contact-wrap .featured-heading { margin-bottom: 1.2rem; }
 .contact-sub {
-  font-size: 1rem; color: rgba(255,255,255,0.5);
-  line-height: 1.7; margin-bottom: 2.5rem;
+  font-size: 1rem; color: var(--ink2);
+  line-height: 1.7; margin-bottom: 2.4rem;
   max-width: 600px; margin-left: auto; margin-right: auto;
 }
+.contact-big-email {
+  display: inline-block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 3vw, 2.3rem);
+  color: var(--ink);
+  margin-bottom: 2.6rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 8px;
+  transition: color .25s;
+}
+.contact-big-email:hover { color: var(--accent); }
 .contact-links { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.5rem; justify-content: center; }
-.contact-email { font-size: .8rem; color: rgba(255,255,255,0.45); margin-bottom: .4rem; font-family: var(--mono); letter-spacing: .02em; }
-.contact-reply { font-size: .8rem; color: rgba(255,255,255,0.3); font-style: italic; margin-bottom: .6rem; }
-.contact-location { font-size: .8rem; color: rgba(255,255,255,0.3); }
+.contact-location { font-size: .85rem; color: var(--muted); margin-top: 1rem; }
 
 /* ════════════════════════
    FOOTER
 ════════════════════════ */
 footer {
-  background: var(--dark);
-  border-top: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
   padding: 2rem 2.5rem;
 }
 .footer-inner {
   max-width: 1180px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
 }
-footer .nav-logo { color: var(--white); }
-footer p { font-size: .78rem; color: rgba(255,255,255,0.3); }
+footer .nav-logo { color: var(--ink); }
+footer p { font-size: .78rem; color: var(--muted); }
 
 /* ════════════════════════
    RESPONSIVE

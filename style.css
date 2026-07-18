@@ -343,11 +343,11 @@ strong { font-weight: 600; }
 
 /* Centered compressed heading (Featured Projects) */
 .featured-heading {
-  font-family: 'Helvetica Compressed', var(--sans);
-  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-  font-weight: normal;
+  font-family: 'Oswald', 'Helvetica Compressed', var(--sans);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 400;
   line-height: 1.1;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink);
   text-align: center;

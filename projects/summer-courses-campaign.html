@@ -8,13 +8,187 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Project detail — cinema poster page treatment ── */
+    body { background: #000000; color: #F5F1EA; --accent: #FFFFFF; --ink: #F5F1EA; }
+
+    .rdv-back {
+      position: fixed; top: 2rem; left: 6vw; z-index: 50;
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-family: var(--sans); font-size: .82rem; font-weight: 500;
+      color: #F5F1EA; text-decoration: none;
+      padding: .55rem 1.15rem; border-radius: 999px;
+      border: 1px solid rgba(245,241,234,0.25);
+      background: rgba(0,0,0,0.35); backdrop-filter: blur(8px);
+      transition: border-color .2s, background .2s;
+    }
+    .rdv-back:hover { border-color: var(--accent); background: rgba(0,0,0,0.65); }
+
+    /* ── Hero ── */
+    .rdv-hero { position: relative; width: 100vw; height: 88vh; overflow: hidden; }
+    .rdv-hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 42%;
+    }
+    .rdv-hero-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, #000000 0%, rgba(0,0,0,0.72) 30%, rgba(0,0,0,0) 62%);
+    }
+    .rdv-hero-content {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 2rem;
+      padding: 0 6vw 5.5vh;
+    }
+    .rdv-eyebrow {
+      display: block; font-family: var(--mono); font-size: .74rem; font-weight: 500;
+      letter-spacing: .22em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1.1rem;
+    }
+    .rdv-title {
+      font-family: var(--serif); font-weight: 900; font-style: normal;
+      font-size: clamp(48px, 7vw, 104px);
+      line-height: .95; letter-spacing: -0.02em; color: #F5F1EA;
+    }
+    .rdv-hero-credits {
+      display: flex; flex-direction: column; align-items: flex-end; gap: .45rem;
+      text-align: right; flex-shrink: 0; padding-bottom: .6rem;
+      font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(245,241,234,0.65);
+    }
+
+    /* ── Sections ── */
+    .rdv-section { padding: 110px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
+    .rdv-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; }
+    .rdv-col-title {
+      font-family: var(--serif); font-size: 30px; font-weight: 700;
+      color: #F5F1EA; margin-bottom: 1.2rem;
+    }
+    .rdv-body { font-size: 17px; line-height: 1.8; color: rgba(245,241,234,0.65); }
+    .rdv-learn { max-width: 760px; }
+
+    /* ── Watch the ad — single centered video ── */
+    .rdv-single-video { display: flex; justify-content: center; margin-top: 2.4rem; }
+    .rdv-single-video video {
+      display: block; width: 100%; max-width: 320px; aspect-ratio: 9 / 16; object-fit: cover;
+      border-radius: 14px; box-shadow: 0 40px 80px rgba(0,0,0,0.5); background: #000;
+    }
+
+    /* ── Stats — end credits ── */
+    .rdv-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+      padding: 80px 6vw;
+    }
+    .rdv-stat { display: flex; flex-direction: column; }
+    .rdv-stat-num {
+      font-family: var(--serif); font-weight: 900; color: var(--accent);
+      font-size: clamp(34px, 4.5vw, 58px); line-height: 1; margin-bottom: .6rem;
+    }
+    .rdv-stat-lbl {
+      font-family: var(--mono); font-size: .7rem; letter-spacing: .16em;
+      text-transform: uppercase; color: rgba(245,241,234,0.65);
+    }
+
+    @media (max-width: 820px) {
+      .rdv-hero { height: 70vh; }
+      .rdv-hero-content { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
+      .rdv-hero-credits { align-items: flex-start; text-align: left; }
+      .rdv-section { padding: 70px 6vw; }
+      .rdv-two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+      .rdv-stats { grid-template-columns: 1fr; padding: 60px 6vw; gap: 2.5rem; }
+    }
+  </style>
 </head>
 <body>
-  <div class="container" style="padding-top:6rem; padding-bottom:6rem;">
-    <a href="../projects.html" class="btn btn-ghost" style="margin-bottom:2.5rem;">← Back to Projects</a>
-    <h1 class="display-heading">Summer Courses Campaign</h1>
-    <img src="../Media/cover-pub.png" alt="Summer Courses Campaign" style="width:100%; max-width:600px; aspect-ratio:4/5; object-fit:cover; border-radius:10px; margin-bottom:2rem;" />
-    <p style="color:var(--ink2); max-width:600px;">Full case study coming soon.</p>
-  </div>
+
+  <a href="../projects.html" class="rdv-back">← Back to Projects</a>
+
+  <section class="rdv-hero">
+    <img class="rdv-hero-img" src="../Media/cover_summercampaign.png" alt="Summer Courses Campaign" />
+    <div class="rdv-hero-gradient"></div>
+    <div class="rdv-hero-content">
+      <div class="rdv-hero-left">
+        <span class="rdv-eyebrow">Alianza Francesa de Málaga</span>
+        <h1 class="rdv-title">Summer Courses<br/>Campaign</h1>
+      </div>
+      <div class="rdv-hero-credits">
+        <span>Paid advertising</span>
+        <span>Lead generation</span>
+        <span>Video content</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="rdv-section rdv-two-col">
+    <div>
+      <h2 class="rdv-col-title">The concept</h2>
+      <p class="rdv-body">For this campaign, the Alianza Francesa de Málaga moved away from a classic sponsored post and promoted a video instead: a face-camera piece I created and hosted, presenting the school's summer courses. We boosted it with a paid budget, and the response went far beyond what we expected.</p>
+    </div>
+    <div>
+      <h2 class="rdv-col-title">The process</h2>
+      <p class="rdv-body">Once the ad started generating inbound messages, I took ownership of the full lead funnel: qualifying each person through conversation, guiding them to a placement test with one of our teachers, and tracking everything in a database I built from scratch. I worked closely with the director, the pedagogical coordinator and the secretary to align on strategy and follow up on leads.</p>
+    </div>
+  </section>
+
+  <section class="rdv-section">
+    <div class="rdv-learn">
+      <h2 class="rdv-col-title">What I learned</h2>
+      <p class="rdv-body">This was my first real paid ad campaign, and my first time managing an entire acquisition process solo, from the ad to the conversation to the follow-up. I learned to treat every lead individually: asking the right questions to understand their level and needs, rather than sending the same generic reply to everyone. It also showed me how content and conversion work together, and made me want to go further in that direction.</p>
+    </div>
+  </section>
+
+  <section class="rdv-section">
+    <h2 class="rdv-col-title" style="margin-bottom: 2rem;">Watch the ad</h2>
+    <div class="rdv-single-video">
+      <video controls playsinline preload="metadata" poster="../Media/cover_summercampaign.png">
+        <source src="../Media/pub.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <section class="rdv-stats">
+    <div class="rdv-stat">
+      <span class="rdv-stat-num">38K+</span>
+      <span class="rdv-stat-lbl">Views</span>
+    </div>
+    <div class="rdv-stat">
+      <span class="rdv-stat-num">150+</span>
+      <span class="rdv-stat-lbl">Qualified leads</span>
+    </div>
+    <div class="rdv-stat">
+      <span class="rdv-stat-num">10+</span>
+      <span class="rdv-stat-lbl">Enrolments generated</span>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis/dist/lenis.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (typeof Lenis !== 'undefined') {
+      const lenis = new Lenis();
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    gsap.fromTo('.rdv-hero-left', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' });
+    gsap.fromTo('.rdv-hero-credits', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: .2 });
+
+    document.querySelectorAll('.rdv-section').forEach((section) => {
+      gsap.fromTo(section, { y: 30, opacity: 0 }, {
+        y: 0, opacity: 1, duration: .8, ease: 'power2.out',
+        scrollTrigger: { trigger: section, start: 'top 85%', once: true }
+      });
+    });
+
+    gsap.fromTo('.rdv-stat', { y: 20, opacity: 0 }, {
+      y: 0, opacity: 1, duration: .6, stagger: .1, ease: 'power2.out',
+      scrollTrigger: { trigger: '.rdv-stats', start: 'top 85%', once: true }
+    });
+  </script>
 </body>
 </html>

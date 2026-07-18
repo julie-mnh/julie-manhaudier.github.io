@@ -200,20 +200,15 @@ if (contactDropdown) {
 
 /* ── NAV SCROLL ── */
 const navbar = document.getElementById('navbar');
-let lastScrollY = 0;
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   navbar.classList.toggle('scrolled', y > 50);
+  // Compact pill stays visible while scrolled; classic menu returns only at the very top
   if (window.innerWidth <= 600) {
     navbar.classList.remove('compact');
-  } else if (y < 80) {
-    navbar.classList.remove('compact');
-  } else if (y > lastScrollY) {
-    navbar.classList.add('compact');
   } else {
-    navbar.classList.remove('compact');
+    navbar.classList.toggle('compact', y > 80);
   }
-  lastScrollY = y;
 }, { passive: true });
 
 /* ── BURGER ── */

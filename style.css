@@ -358,12 +358,12 @@ strong { font-weight: 600; }
    HERO
 ════════════════════════ */
 #hero {
-  min-height: 100vh;
+  min-height: 92vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 3rem;
-  padding: 9rem 2.5rem 5rem;
+  padding: 9rem 2.5rem 2rem;
   max-width: 1180px;
   margin: 0 auto;
   position: relative;
@@ -612,6 +612,7 @@ strong { font-weight: 600; }
    SECTIONS BACKGROUNDS
 ════════════════════════ */
 .section-light  { padding: 8rem 0; background: var(--bg); }
+#featured-projects.section-light { padding-top: 2.5rem; }
 .section-dark   { padding: 8rem 0; background: var(--dark); }
 .section-cream  { padding: 8rem 0; background: var(--bg-cream); }
 

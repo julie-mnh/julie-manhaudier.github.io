@@ -600,17 +600,19 @@ strong { font-weight: 600; }
 ════════════════════════ */
 .stats-bar {
   background: var(--bg);
-  padding: 3rem 2.5rem;
-}
-.stats-inner {
-  max-width: 1040px; margin: 0 auto;
-  padding: 2.2rem 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  display: flex; align-items: flex-start; justify-content: space-between;
-  gap: 2rem; flex-wrap: wrap;
+  padding: 2.2rem 0;
+  overflow: hidden;
 }
-.stat-item { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
+.stats-track {
+  display: flex; align-items: flex-start;
+  gap: 4rem;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+.stats-bar:hover .stats-track { animation-play-state: paused; }
+.stat-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .stat-num {
   font-family: var(--serif);
   font-size: clamp(2.4rem, 4vw, 3.4rem);
@@ -1060,8 +1062,6 @@ footer p { font-size: .78rem; color: var(--muted); }
   .about-grid  { grid-template-columns: 1fr; gap: 3rem; }
   .about-right { justify-content: center; }
   .services-grid { grid-template-columns: 1fr; }
-  .stat-div { display: none; }
-  .stats-inner { justify-content: center; gap: 2rem; flex-wrap: wrap; }
   .stat-item { text-align: center; }
   .project-grid { grid-template-columns: repeat(2, 1fr); }
   .polaroid-stack { margin: 0 auto; }
@@ -1103,8 +1103,6 @@ footer p { font-size: .78rem; color: var(--muted); }
   .hero-meta-row { justify-content: center; }
 
   /* ── Stats ── */
-  .stats-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .stats-inner { flex-wrap: nowrap; min-width: max-content; padding: 1.5rem 1.25rem; gap: 2.5rem; }
 
   /* ── About — polaroid becomes horizontal scroll ── */
   .about-right {

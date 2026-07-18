@@ -5,7 +5,7 @@
 
 const PROJECTS_DATA = [
   { title: 'Carousels',                          image: 'Media/cover-carrou.png',      slug: 'carousels',                          featured: false },
-  { title: 'Rendez-vous', subtitle: 'The interview series', image: 'Media/cover-rendezvous.png',  slug: 'rendez-vous',                        featured: true  },
+  { title: 'Rendez-vous', subtitle: 'The interview series', image: 'Media/cover_rendezvousvignette.jpeg',  slug: 'rendez-vous',                        featured: true  },
   { title: 'Summer Courses Campaign',            image: 'Media/cover-pub.png',         slug: 'summer-courses-campaign',            featured: true  },
   { title: 'Educational and Cultural Content',   image: 'Media/cover-trott.png',       slug: 'educational-and-cultural-content',   featured: true  },
 ];

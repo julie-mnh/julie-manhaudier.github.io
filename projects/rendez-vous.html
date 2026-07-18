@@ -11,7 +11,7 @@
 
   <style>
     /* ── Rendez-vous — cinema poster page treatment ── */
-    body { background: #181512; color: #F5F1EA; }
+    body { background: #000000; color: #F5F1EA; --accent: #FFFFFF; --ink: #F5F1EA; }
 
     .rdv-back {
       position: fixed; top: 2rem; left: 6vw; z-index: 50;
@@ -20,20 +20,20 @@
       color: #F5F1EA; text-decoration: none;
       padding: .55rem 1.15rem; border-radius: 999px;
       border: 1px solid rgba(245,241,234,0.25);
-      background: rgba(24,21,18,0.35); backdrop-filter: blur(8px);
+      background: rgba(0,0,0,0.35); backdrop-filter: blur(8px);
       transition: border-color .2s, background .2s;
     }
-    .rdv-back:hover { border-color: var(--accent); background: rgba(24,21,18,0.65); }
+    .rdv-back:hover { border-color: var(--accent); background: rgba(0,0,0,0.65); }
 
     /* ── Hero ── */
     .rdv-hero { position: relative; width: 100vw; height: 88vh; overflow: hidden; }
     .rdv-hero-img {
       position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; object-position: center 32%;
+      object-fit: cover; object-position: center 42%;
     }
     .rdv-hero-gradient {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, #181512 0%, rgba(24,21,18,0.72) 30%, rgba(24,21,18,0) 62%);
+      background: linear-gradient(to top, #000000 0%, rgba(0,0,0,0.72) 30%, rgba(0,0,0,0) 62%);
     }
     .rdv-hero-content {
       position: absolute; left: 0; right: 0; bottom: 0;
@@ -57,7 +57,6 @@
       font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
       color: rgba(245,241,234,0.65);
     }
-    .rdv-hero-credits span:last-child { color: #F5F1EA; }
 
     /* ── Sections ── */
     .rdv-section { padding: 110px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
@@ -121,17 +120,17 @@
   <a href="../projects.html" class="rdv-back">← Back to Projects</a>
 
   <section class="rdv-hero">
-    <img class="rdv-hero-img" src="../Media/19.jpeg" alt="Rendez-vous, the interview series" />
+    <img class="rdv-hero-img" src="../Media/cover_rendezvous_page.jpg" alt="Rendez-vous, the interview series" />
     <div class="rdv-hero-gradient"></div>
     <div class="rdv-hero-content">
       <div class="rdv-hero-left">
-        <span class="rdv-eyebrow">Case Study — Interview Series</span>
+        <span class="rdv-eyebrow">Alianza Francesa de Málaga</span>
         <h1 class="rdv-title">Rendez-vous</h1>
       </div>
       <div class="rdv-hero-credits">
-        <span>Alianza Francesa de Málaga</span>
-        <span>Created · Hosted · Edited</span>
-        <span>by Julie Manhaudier</span>
+        <span>Video production</span>
+        <span>On-camera hosting</span>
+        <span>Social media content</span>
       </div>
     </div>
   </section>
@@ -160,7 +159,7 @@
       </div>
     </div>
     <div class="rdv-series-text">
-      <h2 class="rdv-col-title">The series</h2>
+      <h2 class="rdv-col-title">What I learned</h2>
       <p class="rdv-body">Rendez-vous was my first time hosting on camera, in Spanish, my third language. I learned that a good interview is not a list of questions but a conversation: writing questions that bring real answers, making guests feel at ease, and staying curious enough to follow where they go.</p>
     </div>
   </section>
@@ -169,17 +168,17 @@
     <h2 class="rdv-col-title" style="margin-bottom: 2rem;">Watch an episode</h2>
     <div class="rdv-episodes-grid">
       <div class="rdv-episode-item">
-        <video controls playsinline preload="metadata">
+        <video controls playsinline preload="metadata" poster="../Media/santiago.png">
           <source src="../Media/RV1.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="rdv-episode-item">
-        <video controls playsinline preload="metadata">
+        <video controls playsinline preload="metadata" poster="../Media/ladani.png">
           <source src="../Media/RV2.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="rdv-episode-item">
-        <video controls playsinline preload="metadata">
+        <video controls playsinline preload="metadata" poster="../Media/miriam.png">
           <source src="../Media/RV3.mp4" type="video/mp4" />
         </video>
       </div>

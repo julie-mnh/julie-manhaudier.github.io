@@ -635,7 +635,7 @@ strong { font-weight: 600; }
    SECTIONS BACKGROUNDS
 ════════════════════════ */
 .section-light  { padding: 8rem 0; background: var(--bg); }
-#featured-projects.section-light { padding-top: 2.5rem; }
+#featured-projects.section-light { padding-top: 5.5rem; }
 .section-dark   { padding: 8rem 0; background: var(--dark); }
 .section-cream  { padding: 8rem 0; background: var(--bg-cream); }
 

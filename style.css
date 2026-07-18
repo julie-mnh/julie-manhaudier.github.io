@@ -616,7 +616,7 @@ strong { font-weight: 600; }
   font-weight: 900;
   color: var(--ink); line-height: 1;
 }
-.stat-lbl { font-size: 0.78rem; color: var(--ink2); margin-top: .6rem; max-width: 24ch; }
+.stat-lbl { font-size: 0.78rem; color: var(--ink2); margin-top: .6rem; white-space: nowrap; }
 .stat-lbl em { font-style: normal; color: var(--accent); }
 .stat-co  {
   font-size: 0.68rem;

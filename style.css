@@ -860,18 +860,21 @@ strong { font-weight: 600; }
    PROJECTS
 ════════════════════════ */
 
-/* ── PROJECT GRID — 4:5 image cards ── */
+/* ── PROJECT GRID — 4:5 image cards, breaks out of the container for bigger covers ── */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
+  width: min(92vw, 1500px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .project-card { display: block; }
 
 .project-card-media {
   aspect-ratio: 4 / 5;
-  border-radius: 10px;
   overflow: hidden;
   background: #0d0d0d;
 }

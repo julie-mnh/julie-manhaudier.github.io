@@ -21,8 +21,7 @@ function renderProjectCards(containerId, { featuredOnly = false } = {}) {
       <div class="project-card-media">
         <img src="${p.image}" alt="${p.title}" />
       </div>
-      <h4 class="project-card-title">${p.title}</h4>
-      ${p.subtitle ? `<span class="project-card-subtitle">${p.subtitle}</span>` : ''}
+      <h4 class="project-card-title">${p.title}${p.subtitle ? `, ${p.subtitle}` : ''}</h4>
       <span class="project-card-link">View Project →</span>
     </a>
   `).join('');

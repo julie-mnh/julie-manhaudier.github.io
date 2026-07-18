@@ -609,7 +609,7 @@ strong { font-weight: 600; }
   display: flex; align-items: flex-start;
   gap: 4rem;
   width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 .stats-bar:hover .stats-track { animation-play-state: paused; }
 .stat-item { display: flex; flex-direction: column; align-items: center; text-align: center; }

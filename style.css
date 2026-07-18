@@ -167,6 +167,20 @@ strong { font-weight: 600; }
   color: var(--ink); letter-spacing: -0.02em;
   transition: opacity .4s var(--ease-out);
 }
+/* Navbar logo — name + location, Max Pratt style */
+#navbar .nav-logo {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+.nav-logo-location {
+  display: block;
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--muted);
+}
 #navbar.compact .nav-logo,
 #navbar.compact .nav-links,
 #navbar.compact .burger {

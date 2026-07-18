@@ -345,7 +345,7 @@ strong { font-weight: 600; }
 .featured-heading {
   font-family: 'Oswald', 'Helvetica Compressed', var(--sans);
   font-size: clamp(2.2rem, 4vw, 3rem);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.04em;
   text-transform: uppercase;

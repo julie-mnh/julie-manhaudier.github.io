@@ -2,6 +2,15 @@
    JULIE MANHAUDIER — PORTFOLIO CSS
    ════════════════════════════════════════ */
 
+/* ── FONTS ── */
+@font-face {
+  font-family: 'Helvetica Compressed';
+  src: url('Police/helvetica/helvetica-compressed-5871d14b6903a.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ── TOKENS ── */
 :root {
   --bg:        #F8F6F2;
@@ -331,6 +340,19 @@ strong { font-weight: 600; }
 }
 .display-heading-light { color: var(--white); }
 .display-heading-light em { color: rgba(255,255,255,0.55); }
+
+/* Centered compressed heading (Featured Projects) */
+.featured-heading {
+  font-family: 'Helvetica Compressed', var(--sans);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
 
 /* ════════════════════════
    HERO

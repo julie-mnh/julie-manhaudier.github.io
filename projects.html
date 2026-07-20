@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Caveat:wght@500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Caveat:wght@500&family=Oswald:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet" />
 </head>
 <body class="is-loading">
 
@@ -25,9 +25,9 @@
     <a href="index.html" class="nav-logo">Julie Manhaudier<span class="nav-logo-location">Málaga, Spain</span></a>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="index.html#contact" class="nav-cta magnetic">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="burger" id="burger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -37,9 +37,9 @@
 
       <ul class="pill-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -62,7 +62,7 @@
       <a href="https://www.linkedin.com/in/juliemanhaudier" target="_blank" rel="noopener" class="btn btn-ghost-light magnetic">LinkedIn ↗</a>
       <a href="https://drive.google.com/uc?export=download&id=18yvJNAwNgYcT3DRF71zWgUE0nswNM7XS" target="_blank" rel="noopener" class="btn btn-ghost-light magnetic">Download CV ↓</a>
     </div>
-    <a href="index.html#contact" class="contact-dropdown-more">See full contact section →</a>
+    <a href="#contact" class="contact-dropdown-more">See full contact section →</a>
   </div>
 
   <!-- ── PROJECTS ── -->
@@ -71,6 +71,38 @@
       <h2 class="featured-heading reveal-up">All Projects</h2>
 
       <div class="project-grid" id="allProjectGrid"></div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section-contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2 class="contact-title reveal-up">Contact</h2>
+          <p class="contact-sub reveal-up">For any enquiries, or just to say hello, get in touch. Available for full-time roles, in Málaga, remote, or internationally.</p>
+        </div>
+        <div class="contact-info reveal-up">
+          <div class="contact-block">
+            <span class="contact-label">Email</span>
+            <a href="mailto:julie.manhaudier.pro@icloud.com">julie.manhaudier.pro@icloud.com</a>
+          </div>
+          <div class="contact-block">
+            <span class="contact-label">Phone</span>
+            <a href="tel:+33617871854">+33 6 17 87 18 54</a>
+          </div>
+          <div class="contact-block">
+            <span class="contact-label">Links</span>
+            <a href="https://www.linkedin.com/in/juliemanhaudier" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://drive.google.com/uc?export=download&id=18yvJNAwNgYcT3DRF71zWgUE0nswNM7XS" target="_blank" rel="noopener">Download CV ↓</a>
+          </div>
+          <div class="contact-block">
+            <span class="contact-label">Location</span>
+            <span>Málaga, Spain</span>
+            <span>Open to relocation</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

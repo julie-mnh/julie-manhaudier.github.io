@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Caveat:wght@500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Caveat:wght@500&family=Oswald:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet" />
 </head>
 <body class="is-loading">
 
@@ -26,8 +26,8 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="index.html#contact" class="nav-cta magnetic">Contact</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="burger" id="burger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -38,8 +38,8 @@
       <ul class="pill-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -62,117 +62,94 @@
       <a href="https://www.linkedin.com/in/juliemanhaudier" target="_blank" rel="noopener" class="btn btn-ghost-light magnetic">LinkedIn ↗</a>
       <a href="https://drive.google.com/uc?export=download&id=18yvJNAwNgYcT3DRF71zWgUE0nswNM7XS" target="_blank" rel="noopener" class="btn btn-ghost-light magnetic">Download CV ↓</a>
     </div>
-    <a href="index.html#contact" class="contact-dropdown-more">See full contact section →</a>
+    <a href="#contact" class="contact-dropdown-more">See full contact section →</a>
   </div>
 
-  <!-- ── ABOUT ── -->
-  <section id="about" class="section-light" style="padding-top: calc(4rem + 8rem);">
+  <!-- ── ABOUT — editorial ── -->
+  <section id="about" class="about-hero">
     <div class="container">
-      <h2 class="featured-heading reveal-up">About Me</h2>
-      <div class="about-grid">
-        <div class="about-left">
-          <h2 class="about-headline reveal-up">Creating content that connects, tells stories, and turns audiences into communities and clients.</h2>
-          <div class="about-body reveal-up">
-            <p>I'm Julie Manhaudier, a content creator and communications professional from France, based in Málaga. My background across media, cultural institutions and a film festival has shaped the way I create: with vision, storytelling, and attention to what makes people stop, feel, and act.</p>
-            <p>I'm an ambitious and proactive person who enjoys creating through image, video, and story, from concept to final cut. Self-taught in video editing, I'm driven by curiosity, initiative, and the challenge of turning ideas into projects that make an impact. That same mindset shapes the way I approach life, with a deep appreciation for sport, music, and the people I care about most.</p>
-          </div>
-          <div class="about-langs reveal-up">
-            <div class="lang-pill">🇫🇷 French — Native</div>
-            <div class="lang-pill">🇬🇧 English — B2</div>
-            <div class="lang-pill">🇪🇸 Spanish — B2</div>
-          </div>
-          <div class="open-card reveal-up" style="margin-top:1.5rem">
-            <p class="card-label">Open to</p>
-            <div class="open-chips">
-              <span>Social Media Manager</span>
-              <span>Content Creator</span>
-              <span>Community Manager</span>
-              <span>Digital Marketing Specialist</span>
-              <span>Video Editor</span>
-            </div>
-          </div>
+      <h1 class="about-headline reveal-up">Content creator turning ideas into video and social content that connects and converts</h1>
+    </div>
+  </section>
+
+  <section class="about-feature">
+    <div class="container">
+      <div class="about-feature-grid">
+        <div class="about-photo reveal-up">
+          <img src="photo 1.png" alt="Julie Manhaudier" />
         </div>
-        <div class="about-right">
-          <div class="polaroid-stack" id="polaroidStack">
-            <div class="polaroid" style="--r:-8deg; --tx:-10px; --fan-r:-12deg; --fan-tx:-60px; --z:3">
-              <img src="1.jpeg" alt="Julie" />
-              <span class="polaroid-caption">always with my camera</span>
-            </div>
-            <div class="polaroid" style="--r:2deg; --tx:0px; --fan-r:0deg; --fan-tx:0px; --z:2">
-              <img src="photo 1.png" alt="Julie" style="object-position: center 20%;" />
-              <span class="polaroid-caption">that's me</span>
-            </div>
-            <div class="polaroid" style="--r:7deg; --tx:10px; --fan-r:12deg; --fan-tx:60px; --z:1">
-              <img src="7.JPG" alt="Julie" />
-              <span class="polaroid-caption">getting the story</span>
-            </div>
-          </div>
+        <div class="about-bio reveal-up">
+          <p>I'm Julie Manhaudier, a content creator and communications professional from France, based in Málaga. My background across media, cultural institutions and a film festival has shaped the way I create: with vision, storytelling, and attention to what makes people stop, feel, and act.</p>
+          <p>Ambitious and proactive, I enjoy creating through image, video and story, from concept to final cut. Self-taught in video editing, I'm driven by curiosity, initiative, and the challenge of turning ideas into projects that make an impact.</p>
+          <dl class="about-facts">
+            <div><dt>Based in</dt><dd>Málaga, Spain</dd></div>
+            <div><dt>Languages</dt><dd>French (native), English, Spanish</dd></div>
+            <div><dt>Open to</dt><dd>Content Creator · Social Media Manager · Video Editor</dd></div>
+          </dl>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── MARQUEE ── -->
-  <div class="marquee-bar">
-    <div class="marquee-track">
-      <span class="marquee-label">Tools</span><span class="mx">·</span>
-      <span>Premiere Pro</span><span class="mx">✦</span>
-      <span>Photoshop</span><span class="mx">✦</span>
-      <span>CapCut</span><span class="mx">✦</span>
-      <span>Figma</span><span class="mx">✦</span>
-      <span>Canva</span><span class="mx">✦</span>
-      <span>WordPress</span><span class="mx">✦</span>
-      <span>Mailchimp</span><span class="mx">✦</span>
-      <span>Office 365</span><span class="mx">✦</span>
-      <span>Google Analytics</span><span class="mx">✦</span>
-      <span>SEMrush</span><span class="mx">✦</span>
-      <span>Ubersuggest</span><span class="mx">✦</span>
-      <span>Meta Business Suite</span><span class="mx">✦</span>
-      <span>ManyChat</span><span class="mx">✦</span>
-      <span>Beacons</span><span class="mx">✦</span>
-      <!-- duplicate for seamless loop -->
-      <span>Premiere Pro</span><span class="mx">✦</span>
-      <span>Photoshop</span><span class="mx">✦</span>
-      <span>CapCut</span><span class="mx">✦</span>
-      <span>Figma</span><span class="mx">✦</span>
-      <span>Canva</span><span class="mx">✦</span>
-      <span>WordPress</span><span class="mx">✦</span>
-      <span>Mailchimp</span><span class="mx">✦</span>
-      <span>Office 365</span><span class="mx">✦</span>
-      <span>Google Analytics</span><span class="mx">✦</span>
-      <span>SEMrush</span><span class="mx">✦</span>
-      <span>Ubersuggest</span><span class="mx">✦</span>
-      <span>Meta Business Suite</span><span class="mx">✦</span>
-      <span>ManyChat</span><span class="mx">✦</span>
-      <span>Beacons</span><span class="mx">✦</span>
-    </div>
-  </div>
-
-  <!-- ── EXPERTISE ── -->
-  <section id="expertise" class="section-light">
+  <!-- ── EXPERTISE — editorial rows ── -->
+  <section id="expertise" class="about-expertise">
     <div class="container">
-      <h2 class="featured-heading reveal-up">Expertise</h2>
-      <p class="expertise-intro reveal-up">I bridge content and strategy, turning ideas into stories that connect and convert. From concept to publish, every post is considered, every detail intentional.</p>
-      <div class="expertise-grid">
-        <div class="expertise-item reveal-up">
+      <div class="expertise-head reveal-up">
+        <span class="about-eyebrow">Expertise</span>
+        <p class="expertise-statement">I bridge content and strategy, turning ideas into stories that connect and convert. From concept to publish, every detail is intentional.</p>
+      </div>
+      <div class="expertise-rows">
+        <div class="expertise-row reveal-up">
           <span class="expertise-num">01</span>
           <h3>Content Strategy</h3>
-          <p>Analysing existing channels, benchmarking competitors and tracking trends to shape a clear digital strategy defining who we're talking to, what message to carry, and how to keep it consistent across every platform.</p>
+          <p>Analysing existing channels, benchmarking competitors and tracking trends to shape a clear digital strategy: who we're talking to, what message to carry, and how to keep it consistent across every platform.</p>
         </div>
-        <div class="expertise-item reveal-up">
+        <div class="expertise-row reveal-up">
           <span class="expertise-num">02</span>
           <h3>Video Production</h3>
-          <p>Handling video end-to-end, from brief to publish: shooting, hosting and editing Reels, interviews, vlogs, ad creatives or educational content, just as comfortable in front of the camera as behind it.</p>
+          <p>Handling video end to end, from brief to publish: shooting, hosting and editing Reels, interviews, vlogs, ad creatives or educational content, just as comfortable in front of the camera as behind it.</p>
         </div>
-        <div class="expertise-item reveal-up">
+        <div class="expertise-row reveal-up">
           <span class="expertise-num">03</span>
           <h3>Social Media Management</h3>
           <p>Keeping accounts alive and growing across Instagram, Facebook, TikTok, LinkedIn and YouTube: planning content, writing captions, creating posts and carousels, managing the community, and tracking what each post really does.</p>
         </div>
-        <div class="expertise-item reveal-up">
+        <div class="expertise-row reveal-up">
           <span class="expertise-num">04</span>
           <h3>Paid Ads &amp; Performance</h3>
           <p>Turning content into measurable results by building ad campaigns, tracking conversions, and analysing what actually works to guide the next strategy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section-contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2 class="contact-title reveal-up">Contact</h2>
+          <p class="contact-sub reveal-up">For any enquiries, or just to say hello, get in touch. Available for full-time roles, in Málaga, remote, or internationally.</p>
+        </div>
+        <div class="contact-info reveal-up">
+          <div class="contact-block">
+            <span class="contact-label">Email</span>
+            <a href="mailto:julie.manhaudier.pro@icloud.com">julie.manhaudier.pro@icloud.com</a>
+          </div>
+          <div class="contact-block">
+            <span class="contact-label">Phone</span>
+            <a href="tel:+33617871854">+33 6 17 87 18 54</a>
+          </div>
+          <div class="contact-block">
+            <span class="contact-label">Links</span>
+            <a href="https://www.linkedin.com/in/juliemanhaudier" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://drive.google.com/uc?export=download&id=18yvJNAwNgYcT3DRF71zWgUE0nswNM7XS" target="_blank" rel="noopener">Download CV ↓</a>
+          </div>
+          <div class="contact-block">
+            <span class="contact-label">Location</span>
+            <span>Málaga, Spain</span>
+            <span>Open to relocation</span>
+          </div>
         </div>
       </div>
     </div>

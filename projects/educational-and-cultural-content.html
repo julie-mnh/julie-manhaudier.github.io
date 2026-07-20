@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ── Project detail — cinema poster page treatment ── */
@@ -29,7 +29,7 @@
     .rdv-hero { position: relative; width: 100vw; height: 88vh; overflow: hidden; }
     .rdv-hero-img {
       position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; object-position: center 42%;
+      object-fit: cover; object-position: center 25%;
     }
     .rdv-hero-gradient {
       position: absolute; inset: 0;
@@ -42,19 +42,19 @@
       padding: 0 6vw 5.5vh;
     }
     .rdv-eyebrow {
-      display: block; font-family: var(--mono); font-size: .74rem; font-weight: 500;
-      letter-spacing: .22em; text-transform: uppercase; color: var(--accent);
+      display: block; font-family: var(--sans); font-size: .74rem; font-weight: 500;
+      letter-spacing: 0; color: rgba(245,241,234,0.6);
       margin-bottom: 1.1rem;
     }
     .rdv-title {
-      font-family: var(--serif); font-weight: 900; font-style: normal;
+      font-family: var(--sans); font-weight: 600; font-style: normal;
       font-size: clamp(44px, 6.5vw, 96px);
-      line-height: .95; letter-spacing: -0.02em; color: #F5F1EA;
+      line-height: 1.05; letter-spacing: -0.02em; color: #F5F1EA;
     }
     .rdv-hero-credits {
       display: flex; flex-direction: column; align-items: flex-end; gap: .45rem;
       text-align: right; flex-shrink: 0; padding-bottom: .6rem;
-      font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      font-family: var(--sans); font-size: .82rem; letter-spacing: 0;
       color: rgba(245,241,234,0.65);
     }
 
@@ -62,7 +62,7 @@
     .rdv-section { padding: 110px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
     .rdv-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; }
     .rdv-col-title {
-      font-family: var(--serif); font-size: 30px; font-weight: 700;
+      font-family: var(--sans); font-size: 24px; font-weight: 600; letter-spacing: -0.01em;
       color: #F5F1EA; margin-bottom: 1.2rem;
     }
     .rdv-body { font-size: 17px; line-height: 1.8; color: rgba(245,241,234,0.65); }
@@ -87,12 +87,11 @@
     }
     .rdv-stat { display: flex; flex-direction: column; align-items: center; text-align: center; }
     .rdv-stat-num {
-      font-family: var(--serif); font-weight: 900; color: var(--accent);
+      font-family: var(--sans); font-weight: 700; color: var(--accent);
       font-size: clamp(44px, 6vw, 76px); line-height: 1; margin-bottom: .7rem;
     }
     .rdv-stat-lbl {
-      font-family: var(--mono); font-size: .74rem; letter-spacing: .16em;
-      text-transform: uppercase; color: rgba(245,241,234,0.65);
+      font-family: var(--sans); font-size: .74rem; letter-spacing: 0; color: rgba(245,241,234,0.65);
     }
 
     @media (max-width: 820px) {
@@ -119,7 +118,7 @@
   <a href="../projects.html" class="rdv-back">← Back to Projects</a>
 
   <section class="rdv-hero">
-    <img class="rdv-hero-img" src="../Media/cover_educationalvideo.png" alt="Educational & Cultural Content" />
+    <img class="rdv-hero-img" src="../Media/cover-trott.png" alt="Educational & Cultural Content" />
     <div class="rdv-hero-gradient"></div>
     <div class="rdv-hero-content">
       <div class="rdv-hero-left">

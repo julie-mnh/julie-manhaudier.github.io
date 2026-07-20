@@ -67,19 +67,23 @@
     }
     .rdv-body { font-size: 17px; line-height: 1.8; color: rgba(245,241,234,0.65); }
 
-    /* ── Watch the ad + What I learned + stats — three columns ── */
-    .rdv-series { display: grid; grid-template-columns: 300px 1fr auto; gap: 4vw; align-items: start; }
-    .rdv-series-text { display: flex; flex-direction: column; }
+    /* ── Top: Watch the ad (left) + concept / process (right) ── */
+    .rdv-top { display: grid; grid-template-columns: 320px 1fr; gap: 5vw; align-items: start; }
+    .rdv-top-text { display: flex; flex-direction: column; gap: 3rem; }
     .rdv-ad-video video {
-      display: block; width: 100%; max-width: 300px; aspect-ratio: 9 / 16; object-fit: cover;
+      display: block; width: 100%; max-width: 320px; aspect-ratio: 9 / 16; object-fit: cover;
       border-radius: 14px; box-shadow: 0 40px 80px rgba(0,0,0,0.5); background: #000;
     }
+    /* ── What I learned + stats — centered ── */
+    .rdv-learn-section { text-align: center; }
+    .rdv-learn-section .rdv-body { max-width: 62ch; margin: 1rem auto 0; }
     .rdv-series-stats {
-      display: flex; flex-direction: column; gap: 2.2rem;
-      border-left: 1px solid rgba(245,241,234,0.15);
-      padding-left: 2.6vw; min-width: 200px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
+      max-width: 760px; margin: 3.5rem auto 0;
+      border-top: 1px solid rgba(245,241,234,0.15);
+      padding-top: 2.4rem;
     }
-    .rdv-stat { display: flex; flex-direction: column; }
+    .rdv-stat { display: flex; flex-direction: column; align-items: center; }
     .rdv-stat-num {
       font-family: var(--sans); font-weight: 700; color: var(--accent);
       font-size: clamp(34px, 4.5vw, 58px); line-height: 1; margin-bottom: .6rem;
@@ -94,8 +98,8 @@
       .rdv-hero-credits { align-items: flex-start; text-align: left; }
       .rdv-section { padding: 70px 6vw; }
       .rdv-two-col { grid-template-columns: 1fr; gap: 2.5rem; }
-      .rdv-series { grid-template-columns: 1fr; gap: 2.5rem; }
-      .rdv-series-stats { border-left: none; padding-left: 0; border-top: 1px solid rgba(245,241,234,0.15); padding-top: 2rem; }
+      .rdv-top { grid-template-columns: 1fr; gap: 2.5rem; }
+      .rdv-series-stats { gap: 1.2rem; margin-top: 2.4rem; }
     }
   </style>
 </head>
@@ -119,28 +123,28 @@
     </div>
   </section>
 
-  <section class="rdv-section rdv-two-col">
-    <div>
-      <h2 class="rdv-col-title">The concept</h2>
-      <p class="rdv-body">For this campaign, the Alianza Francesa de Málaga moved away from a classic sponsored post and promoted a video instead: a face-camera piece I created and hosted, presenting the school's summer courses. We boosted it with a paid budget, and the response went far beyond what we expected.</p>
-    </div>
-    <div>
-      <h2 class="rdv-col-title">The process</h2>
-      <p class="rdv-body">Once the ad started generating inbound messages, I took ownership of the full lead funnel: qualifying each person through conversation, guiding them to a placement test with one of our teachers, and tracking everything in a database I built from scratch. I worked closely with the director, the pedagogical coordinator and the secretary to align on strategy and follow up on leads.</p>
-    </div>
-  </section>
-
-  <section class="rdv-section rdv-series">
+  <section class="rdv-section rdv-top">
     <div class="rdv-ad-video">
       <h2 class="rdv-col-title" style="margin-bottom: 1.4rem;">Watch the ad</h2>
       <video controls playsinline preload="metadata" poster="../Media/coverads.png">
         <source src="../Media/pub.mp4" type="video/mp4" />
       </video>
     </div>
-    <div class="rdv-series-text">
-      <h2 class="rdv-col-title">What I learned</h2>
-      <p class="rdv-body">This was my first real paid ad campaign, and my first time managing an entire acquisition process solo, from the ad to the conversation to the follow-up. I learned to treat every lead individually: asking the right questions to understand their level and needs, rather than sending the same generic reply to everyone. It also showed me how content and conversion work together, and made me want to go further in that direction.</p>
+    <div class="rdv-top-text">
+      <div>
+        <h2 class="rdv-col-title">The concept</h2>
+        <p class="rdv-body">For this campaign, the Alianza Francesa de Málaga moved away from a classic sponsored post and promoted a video instead: a face-camera piece I created and hosted, presenting the school's summer courses. We boosted it with a paid budget, and the response went far beyond what we expected.</p>
+      </div>
+      <div>
+        <h2 class="rdv-col-title">The process</h2>
+        <p class="rdv-body">Once the ad started generating inbound messages, I took ownership of the full lead funnel: qualifying each person through conversation, guiding them to a placement test with one of our teachers, and tracking everything in a database I built from scratch. I worked closely with the director, the pedagogical coordinator and the secretary to align on strategy and follow up on leads.</p>
+      </div>
     </div>
+  </section>
+
+  <section class="rdv-section rdv-learn-section">
+    <h2 class="rdv-col-title">What I learned</h2>
+    <p class="rdv-body">This was my first real paid ad campaign, and my first time managing an entire acquisition process solo, from the ad to the conversation to the follow-up. I learned to treat every lead individually: asking the right questions to understand their level and needs, rather than sending the same generic reply to everyone. It also showed me how content and conversion work together, and made me want to go further in that direction.</p>
     <div class="rdv-series-stats">
       <div class="rdv-stat">
         <span class="rdv-stat-num">38K+</span>

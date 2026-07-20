@@ -59,7 +59,7 @@
     }
 
     /* ── Sections ── */
-    .rdv-section { padding: 110px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
+    .rdv-section { padding: 74px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
     .rdv-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; }
     .rdv-col-title {
       font-family: var(--sans); font-size: 24px; font-weight: 600; letter-spacing: -0.01em;
@@ -67,18 +67,17 @@
     }
     .rdv-body { font-size: 17px; line-height: 1.8; color: rgba(245,241,234,0.65); }
 
-    /* ── Watch the ad + What I learned — two columns ── */
-    .rdv-series { display: grid; grid-template-columns: 360px 1fr; gap: 6vw; align-items: center; }
-    .rdv-series-text { display: flex; flex-direction: column; justify-content: center; }
+    /* ── Watch the ad + What I learned + stats — three columns ── */
+    .rdv-series { display: grid; grid-template-columns: 300px 1fr auto; gap: 4vw; align-items: start; }
+    .rdv-series-text { display: flex; flex-direction: column; }
     .rdv-ad-video video {
-      display: block; width: 100%; max-width: 340px; aspect-ratio: 9 / 16; object-fit: cover;
+      display: block; width: 100%; max-width: 300px; aspect-ratio: 9 / 16; object-fit: cover;
       border-radius: 14px; box-shadow: 0 40px 80px rgba(0,0,0,0.5); background: #000;
     }
-
-    /* ── Stats — end credits ── */
-    .rdv-stats {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-      padding: 80px 6vw;
+    .rdv-series-stats {
+      display: flex; flex-direction: column; gap: 2.2rem;
+      border-left: 1px solid rgba(245,241,234,0.15);
+      padding-left: 2.6vw; min-width: 200px;
     }
     .rdv-stat { display: flex; flex-direction: column; }
     .rdv-stat-num {
@@ -95,8 +94,8 @@
       .rdv-hero-credits { align-items: flex-start; text-align: left; }
       .rdv-section { padding: 70px 6vw; }
       .rdv-two-col { grid-template-columns: 1fr; gap: 2.5rem; }
-      .rdv-series { grid-template-columns: 1fr; gap: 2rem; }
-      .rdv-stats { grid-template-columns: 1fr; padding: 60px 6vw; gap: 2.5rem; }
+      .rdv-series { grid-template-columns: 1fr; gap: 2.5rem; }
+      .rdv-series-stats { border-left: none; padding-left: 0; border-top: 1px solid rgba(245,241,234,0.15); padding-top: 2rem; }
     }
   </style>
 </head>
@@ -142,20 +141,19 @@
       <h2 class="rdv-col-title">What I learned</h2>
       <p class="rdv-body">This was my first real paid ad campaign, and my first time managing an entire acquisition process solo, from the ad to the conversation to the follow-up. I learned to treat every lead individually: asking the right questions to understand their level and needs, rather than sending the same generic reply to everyone. It also showed me how content and conversion work together, and made me want to go further in that direction.</p>
     </div>
-  </section>
-
-  <section class="rdv-stats">
-    <div class="rdv-stat">
-      <span class="rdv-stat-num">38K+</span>
-      <span class="rdv-stat-lbl">Views</span>
-    </div>
-    <div class="rdv-stat">
-      <span class="rdv-stat-num">150+</span>
-      <span class="rdv-stat-lbl">Qualified leads</span>
-    </div>
-    <div class="rdv-stat">
-      <span class="rdv-stat-num">10+</span>
-      <span class="rdv-stat-lbl">Enrolments generated</span>
+    <div class="rdv-series-stats">
+      <div class="rdv-stat">
+        <span class="rdv-stat-num">38K+</span>
+        <span class="rdv-stat-lbl">Views</span>
+      </div>
+      <div class="rdv-stat">
+        <span class="rdv-stat-num">150+</span>
+        <span class="rdv-stat-lbl">Qualified leads</span>
+      </div>
+      <div class="rdv-stat">
+        <span class="rdv-stat-num">10+</span>
+        <span class="rdv-stat-lbl">Enrolments generated</span>
+      </div>
     </div>
   </section>
 
@@ -184,7 +182,7 @@
 
     gsap.fromTo('.rdv-stat', { y: 20, opacity: 0 }, {
       y: 0, opacity: 1, duration: .6, stagger: .1, ease: 'power2.out',
-      scrollTrigger: { trigger: '.rdv-stats', start: 'top 85%', once: true }
+      scrollTrigger: { trigger: '.rdv-series-stats', start: 'top 90%', once: true }
     });
   </script>
 </body>

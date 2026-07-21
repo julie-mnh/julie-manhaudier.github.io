@@ -654,7 +654,7 @@ strong { font-weight: 600; }
 }
 .about-photo img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 9 / 7;
   object-fit: cover;
   object-position: center;
   display: block;

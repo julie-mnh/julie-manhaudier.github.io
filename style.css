@@ -648,9 +648,14 @@ strong { font-weight: 600; }
 .about-feature { padding: 0 0 6rem; }
 .about-feature-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 4rem;
-  align-items: start;
+  grid-template-columns: 1.75fr 0.8fr;
+  gap: 3.5rem;
+  align-items: end;
+  width: min(92vw, 1500px);
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .about-photo img {
   width: 100%;

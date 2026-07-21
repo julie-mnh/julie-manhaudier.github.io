@@ -645,17 +645,20 @@ strong { font-weight: 600; }
   max-width: 18ch;
 }
 
+/* About hero + feature share a wide container so the headline aligns with the image's left edge */
+.about-hero > .container,
+.about-feature > .container {
+  max-width: min(92vw, 1500px);
+  padding-left: 0;
+  padding-right: 0;
+}
 .about-feature { padding: 0 0 6rem; }
 .about-feature-grid {
   display: grid;
   grid-template-columns: 1.75fr 0.8fr;
   gap: 3.5rem;
   align-items: end;
-  width: min(92vw, 1500px);
-  margin: 0 auto;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
 }
 .about-photo img {
   width: 100%;

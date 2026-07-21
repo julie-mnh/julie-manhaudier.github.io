@@ -59,7 +59,7 @@
     }
 
     /* ── Sections ── */
-    .rdv-section { padding: 110px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
+    .rdv-section { padding: 48px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
     .rdv-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; }
     .rdv-col-title {
       font-family: var(--sans); font-size: 24px; font-weight: 600; letter-spacing: -0.01em;
@@ -67,17 +67,28 @@
     }
     .rdv-body { font-size: 17px; line-height: 1.8; color: rgba(245,241,234,0.65); }
 
-    /* ── What I learned — phone mockup, reused from homepage ── */
-    .rdv-series { display: grid; grid-template-columns: 340px 1fr; gap: 6vw; align-items: center; }
-    .rdv-series-phone { display: flex; justify-content: center; }
-    .rdv-series-text { display: flex; flex-direction: column; justify-content: center; }
+    /* ── Top: phone + concept / process / stat, centered ── */
+    .rdv-top { display: grid; grid-template-columns: 300px minmax(0, 560px); gap: 4vw; align-items: center; justify-content: center; }
+    .rdv-top-media { display: flex; justify-content: center; }
+    .rdv-top-text { display: flex; flex-direction: column; gap: 2.4rem; }
+    .rdv-top-stats { border-top: 1px solid rgba(245,241,234,0.15); padding-top: 1.8rem; }
+    .rdv-top-stats .rdv-stat { align-items: flex-start; text-align: left; }
+    .rdv-top-stats .rdv-stat-num { font-size: clamp(40px, 5vw, 58px); }
+    .rdv-section.rdv-learn-section { text-align: center; padding-top: 26px; padding-bottom: 26px; }
+    .rdv-learn-section .rdv-body { max-width: 62ch; margin: 1rem auto 0; }
 
-    /* ── Watch an example — 3-up video grid ── */
+    /* ── Watch a video — 3-up video grid with captions ── */
     .rdv-episodes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; justify-items: center; }
+    .rdv-episode-item { display: flex; flex-direction: column; align-items: center; }
     .rdv-episode-item video {
       display: block; width: 100%; max-width: 300px; aspect-ratio: 9 / 16; object-fit: cover;
       border-radius: 14px; box-shadow: 0 40px 80px rgba(0,0,0,0.5);
       background: #000;
+    }
+    .rdv-episode-cap {
+      display: block; margin-top: .9rem;
+      font-family: var(--sans); font-size: .82rem; color: rgba(245,241,234,0.6);
+      text-align: center;
     }
 
     /* ── Stats — end credits ── */
@@ -98,10 +109,9 @@
       .rdv-hero { height: 70vh; }
       .rdv-hero-content { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
       .rdv-hero-credits { align-items: flex-start; text-align: left; }
-      .rdv-section { padding: 70px 6vw; }
+      .rdv-section { padding: 48px 6vw; }
       .rdv-two-col { grid-template-columns: 1fr; gap: 2.5rem; }
-      .rdv-series { grid-template-columns: 1fr; gap: 2rem; }
-      .rdv-series-text { margin-top: .5rem; }
+      .rdv-top { grid-template-columns: 1fr; gap: 2.5rem; }
       .rdv-episodes-grid {
         display: flex; grid-template-columns: unset;
         overflow-x: auto; scroll-snap-type: x mandatory;
@@ -133,60 +143,62 @@
     </div>
   </section>
 
-  <section class="rdv-section rdv-two-col">
-    <div>
-      <h2 class="rdv-col-title">The concept</h2>
-      <p class="rdv-body">At the Alianza Francesa de Málaga, I built and ran a set of content pillars: recurring video formats designed to move the school's image away from pure promotion and toward something more human, showing the daily life at the Alianza and the events it hosts.</p>
-    </div>
-    <div>
-      <h2 class="rdv-col-title">The process</h2>
-      <p class="rdv-body">I quickly noticed that the school's existing promotional posts were losing traction, so I shifted toward video formats that put real people on screen. Working alone, I had to be genuinely organized: I built and managed an editorial calendar, planned content in advance based on upcoming events, and made deliberate choices about which formats to prioritize when time was tight, sometimes reducing the frequency of one pillar to focus on another.</p>
-    </div>
-  </section>
-
-  <section class="rdv-section rdv-series">
-    <div class="rdv-series-phone">
+  <section class="rdv-section rdv-top">
+    <div class="rdv-top-media">
       <div class="phone-scene">
         <div class="phone-glow"></div>
         <div class="phone">
           <div class="phone-notch"></div>
           <div class="phone-screen">
-            <video class="phone-video" src="../Media/vlog.mp4" autoplay muted loop playsinline></video>
+            <video class="phone-video" src="../Media/educational.mp4" autoplay muted loop playsinline></video>
           </div>
         </div>
       </div>
     </div>
-    <div class="rdv-series-text">
-      <h2 class="rdv-col-title">What I learned</h2>
-      <p class="rdv-body">Managing several formats solo taught me the value of focus: it's not about doing everything or following every trend, but about choosing a strong base of content types and doing them well. I also learned to prioritize by impact, knowing that some content (like a paid campaign) directly drives enrolments, while other formats build long-term trust and visibility. That distinction now shapes how I approach any new content strategy.</p>
+    <div class="rdv-top-text">
+      <div>
+        <h2 class="rdv-col-title">The concept</h2>
+        <p class="rdv-body">At the Alianza Francesa de Málaga, I built and ran a set of content pillars: recurring video formats designed to move the school's image away from pure promotion and toward something more human, showing the daily life at the Alianza and the events it hosts.</p>
+      </div>
+      <div>
+        <h2 class="rdv-col-title">The process</h2>
+        <p class="rdv-body">I quickly noticed that the school's existing promotional posts were losing traction, so I shifted toward video formats that put real people on screen. Working alone, I had to be genuinely organized: I built and managed an editorial calendar, planned content in advance based on upcoming events, and made deliberate choices about which formats to prioritize when time was tight, sometimes reducing the frequency of one pillar to focus on another.</p>
+      </div>
+      <div class="rdv-top-stats">
+        <div class="rdv-stat">
+          <span class="rdv-stat-num">20+</span>
+          <span class="rdv-stat-lbl">Videos produced</span>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section class="rdv-section rdv-learn-section">
+    <h2 class="rdv-col-title">What I learned</h2>
+    <p class="rdv-body">Managing several formats solo taught me the value of focus: it's not about doing everything or following every trend, but about choosing a strong base of content types and doing them well. I also learned to prioritize by impact, knowing that some content (like a paid campaign) directly drives enrolments, while other formats build long-term trust and visibility. That distinction now shapes how I approach any new content strategy.</p>
   </section>
 
   <section class="rdv-section">
-    <h2 class="rdv-col-title" style="margin-bottom: 2rem;">Watch an example</h2>
+    <h2 class="rdv-col-title" style="margin-bottom: 2rem;">Watch a video</h2>
     <div class="rdv-episodes-grid">
       <div class="rdv-episode-item">
-        <video controls playsinline preload="metadata">
+        <video controls playsinline preload="metadata" poster="../Media/cover_vlogg.png">
+          <source src="../Media/vlog.mp4" type="video/mp4" />
+        </video>
+        <span class="rdv-episode-cap">Vlog</span>
+      </div>
+      <div class="rdv-episode-item">
+        <video controls playsinline preload="metadata" poster="../Media/cover_street_interview.png">
           <source src="../Media/microtrott.mp4" type="video/mp4" />
         </video>
+        <span class="rdv-episode-cap">Street interview</span>
       </div>
       <div class="rdv-episode-item">
-        <video controls playsinline preload="metadata">
-          <source src="../Media/prog.mp4" type="video/mp4" />
+        <video controls playsinline preload="metadata" poster="../Media/cover_pedagogical_video.png">
+          <source src="../Media/p%C3%A9da.mp4" type="video/mp4" />
         </video>
+        <span class="rdv-episode-cap">Pedagogical video</span>
       </div>
-      <div class="rdv-episode-item">
-        <video controls playsinline preload="metadata">
-          <source src="../Media/carrou.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <section class="rdv-stats">
-    <div class="rdv-stat">
-      <span class="rdv-stat-num">20+</span>
-      <span class="rdv-stat-lbl">Videos produced</span>
     </div>
   </section>
 
@@ -215,7 +227,7 @@
 
     gsap.fromTo('.rdv-stat', { y: 20, opacity: 0 }, {
       y: 0, opacity: 1, duration: .6, stagger: .1, ease: 'power2.out',
-      scrollTrigger: { trigger: '.rdv-stats', start: 'top 85%', once: true }
+      scrollTrigger: { trigger: '.rdv-top-stats', start: 'top 92%', once: true }
     });
 
     const episodeVideos = document.querySelectorAll('.rdv-episode-item video');

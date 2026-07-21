@@ -59,7 +59,7 @@
     }
 
     /* ── Sections ── */
-    .rdv-section { padding: 74px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
+    .rdv-section { padding: 48px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
     .rdv-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; }
     .rdv-col-title {
       font-family: var(--sans); font-size: 24px; font-weight: 600; letter-spacing: -0.01em;
@@ -67,23 +67,21 @@
     }
     .rdv-body { font-size: 17px; line-height: 1.8; color: rgba(245,241,234,0.65); }
 
-    /* ── Top: Watch the ad (left) + concept / process (right) ── */
-    .rdv-top { display: grid; grid-template-columns: 320px 1fr; gap: 5vw; align-items: start; }
-    .rdv-top-text { display: flex; flex-direction: column; gap: 3rem; }
+    /* ── Top: Watch the ad (left) + concept / process / stats (right), centered ── */
+    .rdv-top { display: grid; grid-template-columns: 300px minmax(0, 560px); gap: 4vw; align-items: center; justify-content: center; }
+    .rdv-top-text { display: flex; flex-direction: column; gap: 2.4rem; }
+    .rdv-top-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem;
+      border-top: 1px solid rgba(245,241,234,0.15); padding-top: 1.8rem;
+    }
     .rdv-ad-video video {
-      display: block; width: 100%; max-width: 320px; aspect-ratio: 9 / 16; object-fit: cover;
+      display: block; width: 100%; max-width: 300px; aspect-ratio: 9 / 16; object-fit: cover;
       border-radius: 14px; box-shadow: 0 40px 80px rgba(0,0,0,0.5); background: #000;
     }
-    /* ── What I learned + stats — centered ── */
-    .rdv-learn-section { text-align: center; }
+    /* ── What I learned — centered ── */
+    .rdv-section.rdv-learn-section { text-align: center; padding-top: 26px; padding-bottom: 26px; }
     .rdv-learn-section .rdv-body { max-width: 62ch; margin: 1rem auto 0; }
-    .rdv-series-stats {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
-      max-width: 760px; margin: 3.5rem auto 0;
-      border-top: 1px solid rgba(245,241,234,0.15);
-      padding-top: 2.4rem;
-    }
-    .rdv-stat { display: flex; flex-direction: column; align-items: center; }
+    .rdv-stat { display: flex; flex-direction: column; }
     .rdv-stat-num {
       font-family: var(--sans); font-weight: 700; color: var(--accent);
       font-size: clamp(34px, 4.5vw, 58px); line-height: 1; margin-bottom: .6rem;
@@ -96,10 +94,10 @@
       .rdv-hero { height: 70vh; }
       .rdv-hero-content { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
       .rdv-hero-credits { align-items: flex-start; text-align: left; }
-      .rdv-section { padding: 70px 6vw; }
+      .rdv-section { padding: 48px 6vw; }
       .rdv-two-col { grid-template-columns: 1fr; gap: 2.5rem; }
       .rdv-top { grid-template-columns: 1fr; gap: 2.5rem; }
-      .rdv-series-stats { gap: 1.2rem; margin-top: 2.4rem; }
+      .rdv-top-stats { gap: 1.2rem; }
     }
   </style>
 </head>
@@ -139,26 +137,26 @@
         <h2 class="rdv-col-title">The process</h2>
         <p class="rdv-body">Once the ad started generating inbound messages, I took ownership of the full lead funnel: qualifying each person through conversation, guiding them to a placement test with one of our teachers, and tracking everything in a database I built from scratch. I worked closely with the director, the pedagogical coordinator and the secretary to align on strategy and follow up on leads.</p>
       </div>
+      <div class="rdv-top-stats">
+        <div class="rdv-stat">
+          <span class="rdv-stat-num">38K+</span>
+          <span class="rdv-stat-lbl">Views</span>
+        </div>
+        <div class="rdv-stat">
+          <span class="rdv-stat-num">150+</span>
+          <span class="rdv-stat-lbl">Qualified leads</span>
+        </div>
+        <div class="rdv-stat">
+          <span class="rdv-stat-num">10+</span>
+          <span class="rdv-stat-lbl">Enrolments generated</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="rdv-section rdv-learn-section">
     <h2 class="rdv-col-title">What I learned</h2>
     <p class="rdv-body">This was my first real paid ad campaign, and my first time managing an entire acquisition process solo, from the ad to the conversation to the follow-up. I learned to treat every lead individually: asking the right questions to understand their level and needs, rather than sending the same generic reply to everyone. It also showed me how content and conversion work together, and made me want to go further in that direction.</p>
-    <div class="rdv-series-stats">
-      <div class="rdv-stat">
-        <span class="rdv-stat-num">38K+</span>
-        <span class="rdv-stat-lbl">Views</span>
-      </div>
-      <div class="rdv-stat">
-        <span class="rdv-stat-num">150+</span>
-        <span class="rdv-stat-lbl">Qualified leads</span>
-      </div>
-      <div class="rdv-stat">
-        <span class="rdv-stat-num">10+</span>
-        <span class="rdv-stat-lbl">Enrolments generated</span>
-      </div>
-    </div>
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -186,7 +184,7 @@
 
     gsap.fromTo('.rdv-stat', { y: 20, opacity: 0 }, {
       y: 0, opacity: 1, duration: .6, stagger: .1, ease: 'power2.out',
-      scrollTrigger: { trigger: '.rdv-series-stats', start: 'top 90%', once: true }
+      scrollTrigger: { trigger: '.rdv-top-stats', start: 'top 92%', once: true }
     });
   </script>
 </body>

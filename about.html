@@ -76,15 +76,15 @@
     <div class="container">
       <div class="about-feature-grid">
         <div class="about-photo reveal-up">
-          <img src="photo 1.png" alt="Julie Manhaudier" />
+          <img id="aboutPhoto" src="Media/IMG_2082 2.PNG" alt="Julie Manhaudier" />
         </div>
         <div class="about-bio reveal-up">
           <p>I'm Julie Manhaudier, a content creator and communications professional from France, based in Málaga. My background across media, cultural institutions and a film festival has shaped the way I create: with vision, storytelling, and attention to what makes people stop, feel, and act.</p>
           <p>Ambitious and proactive, I enjoy creating through image, video and story, from concept to final cut. Self-taught in video editing, I'm driven by curiosity, initiative, and the challenge of turning ideas into projects that make an impact.</p>
           <dl class="about-facts">
             <div><dt>Based in</dt><dd>Málaga, Spain</dd></div>
-            <div><dt>Languages</dt><dd>French (native), English, Spanish</dd></div>
-            <div><dt>Open to</dt><dd>Content Creator · Social Media Manager · Video Editor</dd></div>
+            <div><dt>Languages</dt><dd>French (native), English (B2), Spanish (B2)</dd></div>
+            <div><dt>Open to</dt><dd>Content creation, social media management, digital marketing &amp; communications</dd></div>
           </dl>
         </div>
       </div>
@@ -164,5 +164,24 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    /* ── About photo slideshow ── */
+    (function () {
+      var img = document.getElementById('aboutPhoto');
+      if (!img) return;
+      var shots = [
+        'Media/IMG_2082 2.PNG', 'Media/7.JPG', '1.jpeg', 'Media/cover_rendezvousvignette.jpeg',
+        'Media/2.JPG', 'Media/IMG_5926.JPG', 'Media/alfombra-02.jpeg', 'Media/entrevistas-furcy-05.jpeg',
+        'Media/x.jpg', 'Media/IMG_5809.jpeg', 'Media/IMG_3287.jpeg', 'Media/IMG_3733.jpeg'
+      ];
+      shots.forEach(function (s) { var p = new Image(); p.src = s; }); // preload
+      var i = 0;
+      setInterval(function () {
+        i = (i + 1) % shots.length;
+        img.style.opacity = '0';
+        setTimeout(function () { img.src = shots[i]; img.style.opacity = '1'; }, 450);
+      }, 3200);
+    })();
+  </script>
 </body>
 </html>

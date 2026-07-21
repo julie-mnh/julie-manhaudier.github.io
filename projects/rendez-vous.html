@@ -59,7 +59,7 @@
     }
 
     /* ── Sections ── */
-    .rdv-section { padding: 110px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
+    .rdv-section { padding: 48px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
     .rdv-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; }
     .rdv-col-title {
       font-family: var(--sans); font-size: 24px; font-weight: 600; letter-spacing: -0.01em;
@@ -67,10 +67,17 @@
     }
     .rdv-body { font-size: 17px; line-height: 1.8; color: rgba(245,241,234,0.65); }
 
-    /* ── The series — phone mockup, reused from homepage ── */
-    .rdv-series { display: grid; grid-template-columns: 340px 1fr; gap: 6vw; align-items: center; }
-    .rdv-series-phone { display: flex; justify-content: center; }
-    .rdv-series-text { display: flex; flex-direction: column; justify-content: center; }
+    /* ── Top: phone + concept / process / stats, centered ── */
+    .rdv-top { display: grid; grid-template-columns: 300px minmax(0, 560px); gap: 4vw; align-items: center; justify-content: center; }
+    .rdv-top-media { display: flex; justify-content: center; }
+    .rdv-top-text { display: flex; flex-direction: column; gap: 2.4rem; }
+    .rdv-top-stats {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 2rem;
+      border-top: 1px solid rgba(245,241,234,0.15); padding-top: 1.8rem;
+    }
+    /* ── What I learned — centered ── */
+    .rdv-section.rdv-learn-section { text-align: center; padding-top: 26px; padding-bottom: 26px; }
+    .rdv-learn-section .rdv-body { max-width: 62ch; margin: 1rem auto 0; }
 
     /* ── Watch an episode — 3-up video grid ── */
     .rdv-episodes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; justify-items: center; }
@@ -98,10 +105,9 @@
       .rdv-hero { height: 70vh; }
       .rdv-hero-content { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
       .rdv-hero-credits { align-items: flex-start; text-align: left; }
-      .rdv-section { padding: 70px 6vw; }
+      .rdv-section { padding: 48px 6vw; }
       .rdv-two-col { grid-template-columns: 1fr; gap: 2.5rem; }
-      .rdv-series { grid-template-columns: 1fr; gap: 2rem; }
-      .rdv-series-text { margin-top: .5rem; }
+      .rdv-top { grid-template-columns: 1fr; gap: 2.5rem; }
       .rdv-episodes-grid {
         display: flex; grid-template-columns: unset;
         overflow-x: auto; scroll-snap-type: x mandatory;
@@ -110,7 +116,6 @@
       }
       .rdv-episode-item { flex: 0 0 auto; scroll-snap-align: center; }
       .rdv-episode-item video { width: 70vw; max-width: 300px; }
-      .rdv-stats { grid-template-columns: repeat(2, 1fr); padding: 60px 6vw; }
     }
   </style>
 </head>
@@ -134,19 +139,8 @@
     </div>
   </section>
 
-  <section class="rdv-section rdv-two-col">
-    <div>
-      <h2 class="rdv-col-title">The concept</h2>
-      <p class="rdv-body">Rendez-vous is an interview video series I created and produced for the Alianza Francesa de Málaga. The idea: move away from direct promotional posts and attract people first through storytelling, giving a voice to students, alumni and figures connected to French culture.</p>
-    </div>
-    <div>
-      <h2 class="rdv-col-title">The process</h2>
-      <p class="rdv-body">I built the format from scratch and produced each episode end to end: research, pre-interview, filming, hosting, editing and publishing. Working alone meant working smarter: instead of editing full interviews, I cut the strongest moments into short videos made for social media.</p>
-    </div>
-  </section>
-
-  <section class="rdv-section rdv-series">
-    <div class="rdv-series-phone">
+  <section class="rdv-section rdv-top">
+    <div class="rdv-top-media">
       <div class="phone-scene">
         <div class="phone-glow"></div>
         <div class="phone">
@@ -157,10 +151,39 @@
         </div>
       </div>
     </div>
-    <div class="rdv-series-text">
-      <h2 class="rdv-col-title">What I learned</h2>
-      <p class="rdv-body">Hosting in a mix of French and Spanish taught me to stay natural under pressure, adapting not just my language but my whole approach depending on who was in front of me. I learned that a good interview is never just a list of questions: it's knowing when to follow your script and when to abandon it entirely to follow the conversation.</p>
+    <div class="rdv-top-text">
+      <div>
+        <h2 class="rdv-col-title">The concept</h2>
+        <p class="rdv-body">Rendez-vous is an interview video series I created and produced for the Alianza Francesa de Málaga. The idea: move away from direct promotional posts and attract people first through storytelling, giving a voice to students, alumni and figures connected to French culture.</p>
+      </div>
+      <div>
+        <h2 class="rdv-col-title">The process</h2>
+        <p class="rdv-body">I built the format from scratch and produced each episode end to end: research, pre-interview, filming, hosting, editing and publishing. Working alone meant working smarter: instead of editing full interviews, I cut the strongest moments into short videos made for social media.</p>
+      </div>
+      <div class="rdv-top-stats">
+        <div class="rdv-stat">
+          <span class="rdv-stat-num">30K+</span>
+          <span class="rdv-stat-lbl">Views across the series</span>
+        </div>
+        <div class="rdv-stat">
+          <span class="rdv-stat-num">800+</span>
+          <span class="rdv-stat-lbl">Interactions generated</span>
+        </div>
+        <div class="rdv-stat">
+          <span class="rdv-stat-num">6</span>
+          <span class="rdv-stat-lbl">Episodes produced</span>
+        </div>
+        <div class="rdv-stat">
+          <span class="rdv-stat-num">15+</span>
+          <span class="rdv-stat-lbl">Pieces of content, end to end</span>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section class="rdv-section rdv-learn-section">
+    <h2 class="rdv-col-title">What I learned</h2>
+    <p class="rdv-body">Hosting in a mix of French and Spanish taught me to stay natural under pressure, adapting not just my language but my whole approach depending on who was in front of me. I learned that a good interview is never just a list of questions: it's knowing when to follow your script and when to abandon it entirely to follow the conversation.</p>
   </section>
 
   <section class="rdv-section">
@@ -181,25 +204,6 @@
           <source src="../Media/RV3.mp4" type="video/mp4" />
         </video>
       </div>
-    </div>
-  </section>
-
-  <section class="rdv-stats">
-    <div class="rdv-stat">
-      <span class="rdv-stat-num">30K+</span>
-      <span class="rdv-stat-lbl">Views across the series</span>
-    </div>
-    <div class="rdv-stat">
-      <span class="rdv-stat-num">800+</span>
-      <span class="rdv-stat-lbl">Interactions generated</span>
-    </div>
-    <div class="rdv-stat">
-      <span class="rdv-stat-num">6</span>
-      <span class="rdv-stat-lbl">Episodes produced</span>
-    </div>
-    <div class="rdv-stat">
-      <span class="rdv-stat-num">15+</span>
-      <span class="rdv-stat-lbl">Pieces of content, end to end</span>
     </div>
   </section>
 
@@ -228,7 +232,7 @@
 
     gsap.fromTo('.rdv-stat', { y: 20, opacity: 0 }, {
       y: 0, opacity: 1, duration: .6, stagger: .1, ease: 'power2.out',
-      scrollTrigger: { trigger: '.rdv-stats', start: 'top 85%', once: true }
+      scrollTrigger: { trigger: '.rdv-top-stats', start: 'top 92%', once: true }
     });
 
     const episodeVideos = document.querySelectorAll('.rdv-episode-item video');

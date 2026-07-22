@@ -1273,3 +1273,46 @@ footer p { font-size: .78rem; color: var(--muted); }
   .contact-links { flex-direction: column; align-items: center; }
   .contact-links .btn { width: 100%; max-width: 300px; text-align: center; justify-content: center; }
 }
+
+/* ════════════════════════
+   CUSTOM CURSOR — inverted (mix-blend-mode: difference)
+   White circles that invert whatever is underneath:
+   they read black on the cream pages, white on the dark project pages.
+════════════════════════ */
+.cursor-dot {
+  width: 8px; height: 8px;
+  background: #fff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  transition: width .22s var(--ease-out), height .22s var(--ease-out);
+  z-index: 9999;
+  pointer-events: none;
+}
+.cursor-ring {
+  width: 40px; height: 40px;
+  border: 1.5px solid #fff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0.85;
+  transition: width .32s var(--ease-out), height .32s var(--ease-out), opacity .32s;
+  z-index: 9998;
+  pointer-events: none;
+}
+body.cursor-hover .cursor-dot  { width: 13px; height: 13px; }
+body.cursor-hover .cursor-ring { width: 64px; height: 64px; opacity: 0.55; }
+
+/* Hide the native pointer only on real mouse devices */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button, .btn, .project-card, .expertise-row { cursor: none; }
+  /* keep the real pointer where precision matters */
+  video, input, textarea, select { cursor: auto; }
+}
+/* Touch devices — no custom cursor at all */
+@media (pointer: coarse), (hover: none) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+  body { cursor: auto !important; }
+}

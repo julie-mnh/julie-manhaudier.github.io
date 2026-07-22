@@ -125,6 +125,10 @@
 </head>
 <body>
 
+  <!-- ── CUSTOM CURSOR ── -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
   <a href="../projects.html" class="rdv-back">← Back to Projects</a>
 
   <section class="rdv-hero">
@@ -236,6 +240,27 @@
         episodeVideos.forEach((other) => { if (other !== v) other.pause(); });
       });
     });
+  </script>
+  <script>
+    /* Custom inverted cursor (self-contained: these pages don't load script.js) */
+    (function () {
+      var d = document.querySelector('.cursor-dot'), r = document.querySelector('.cursor-ring');
+      if (!d || !r) return;
+      if (window.matchMedia('(pointer: coarse)').matches || !window.matchMedia('(hover: hover)').matches) return;
+      var mX = innerWidth / 2, mY = innerHeight / 2, dX = mX, dY = mY, rX = mX, rY = mY;
+      addEventListener('mousemove', function (e) { mX = e.clientX; mY = e.clientY; }, { passive: true });
+      (function loop() {
+        dX += (mX - dX) * 0.55; dY += (mY - dY) * 0.55;
+        rX += (mX - rX) * 0.10; rY += (mY - rY) * 0.10;
+        d.style.transform = 'translate(' + dX + 'px,' + dY + 'px) translate(-50%,-50%)';
+        r.style.transform = 'translate(' + rX + 'px,' + rY + 'px) translate(-50%,-50%)';
+        requestAnimationFrame(loop);
+      })();
+      document.querySelectorAll('a, button, .rdv-episode-item').forEach(function (el) {
+        el.addEventListener('mouseenter', function () { document.body.classList.add('cursor-hover'); });
+        el.addEventListener('mouseleave', function () { document.body.classList.remove('cursor-hover'); });
+      });
+    })();
   </script>
 </body>
 </html>

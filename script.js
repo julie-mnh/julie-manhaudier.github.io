@@ -380,3 +380,34 @@ window.addEventListener('scroll', () => {
     a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent)' : '';
   });
 }, { passive: true });
+
+/* ── CUSTOM CURSOR — dot follows fast, ring lags behind ── */
+(function () {
+  const dot  = document.querySelector('.cursor-dot');
+  const ring = document.querySelector('.cursor-ring');
+  if (!dot || !ring) return;
+  // Skip on touch / no-hover devices
+  if (window.matchMedia('(pointer: coarse)').matches || !window.matchMedia('(hover: hover)').matches) return;
+
+  let mX = window.innerWidth / 2, mY = window.innerHeight / 2;
+  let dX = mX, dY = mY, rX = mX, rY = mY;
+
+  window.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; }, { passive: true });
+
+  (function loop() {
+    dX += (mX - dX) * 0.55;           // dot: snappy
+    dY += (mY - dY) * 0.55;
+    rX += (mX - rX) * 0.10;           // ring: smooth lag
+    rY += (mY - rY) * 0.10;
+    dot.style.transform  = `translate(${dX}px, ${dY}px) translate(-50%, -50%)`;
+    ring.style.transform = `translate(${rX}px, ${rY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(loop);
+  })();
+
+  // Grow on interactive elements
+  const hoverTargets = 'a, button, .btn, .project-card, .float-badge, .expertise-row, .about-photo';
+  document.querySelectorAll(hoverTargets).forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+})();

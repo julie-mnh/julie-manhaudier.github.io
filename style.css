@@ -506,6 +506,13 @@ strong { font-weight: 600; }
   width: max-content;
   animation: marquee 60s linear infinite;
 }
+/* The track holds two identical copies of the stats. A seamless loop needs a
+   shift of one copy's width, which is 50% plus half the 4rem gap that sits
+   between the two copies — hence the extra 2rem. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 2rem)); }
+}
 .stats-bar:hover .stats-track { animation-play-state: paused; }
 .stat-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .stat-num {

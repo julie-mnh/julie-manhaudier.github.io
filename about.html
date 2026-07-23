@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Caveat:wght@500&family=Oswald:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet" />
 </head>
 <body class="is-loading">
 
@@ -61,7 +61,7 @@
     <div class="container">
       <div class="about-feature-grid">
         <div class="about-photo reveal-up">
-          <img id="aboutPhoto" src="Media/1.png" alt="Julie Manhaudier" />
+          <img id="aboutPhoto" src="Media/1.jpg" alt="Julie Manhaudier" loading="lazy" decoding="async" />
         </div>
         <div class="about-bio reveal-up">
           <p>I'm Julie Manhaudier, a content creator and communications professional from France, based in Málaga. My background across media, cultural institutions and a film festival has shaped the way I create: with vision, storytelling, and attention to what makes people stop, feel, and act.</p>
@@ -155,7 +155,7 @@
       var img = document.getElementById('aboutPhoto');
       if (!img) return;
       var shots = [
-        'Media/1.png', 'Media/2.png', 'Media/3.png', 'Media/4.png', 'Media/5.png'
+        'Media/1.jpg', 'Media/2.jpg', 'Media/3.jpg', 'Media/4.jpg', 'Media/5.jpg'
       ];
       shots.forEach(function (s) { var p = new Image(); p.src = s; }); // preload
       var i = 0;

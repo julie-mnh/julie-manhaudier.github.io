@@ -6,3 +6,12 @@
 !Media/RV1.mp4
 !Media/RV2.mp4
 !Media/RV3.mp4
+# Project-page videos — must be whitelisted or the *.mp4 rule above silently drops them
+!Media/pub.mp4
+!Media/educational.mp4
+!Media/vlog.mp4
+!Media/microtrott.mp4
+!Media/péda.mp4
+
+# macOS system files
+.DS_Store

@@ -5,8 +5,8 @@
 
 const PROJECTS_DATA = [
   { title: 'Rendez-vous', subtitle: 'The interview series', image: 'Media/cover_rendezvousvignette.jpeg',  slug: 'rendez-vous',                        featured: true  },
-  { title: 'Summer Courses Campaign',            image: 'Media/cover-pub.png',         slug: 'summer-courses-campaign',            featured: true  },
-  { title: 'Educational and Cultural Content',   image: 'Media/cover-trott.png',       slug: 'educational-and-cultural-content',   featured: true  },
+  { title: 'Summer Courses Campaign',            image: 'Media/cover-pub.jpg',         slug: 'summer-courses-campaign',            featured: true  },
+  { title: 'Educational and Cultural Content',   image: 'Media/cover-trott.jpg',       slug: 'educational-and-cultural-content',   featured: true  },
 ];
 
 function renderProjectCards(containerId, { featuredOnly = false } = {}) {
@@ -18,7 +18,7 @@ function renderProjectCards(containerId, { featuredOnly = false } = {}) {
   container.innerHTML = list.map(p => `
     <a class="project-card reveal-up" href="projects/${p.slug}.html">
       <div class="project-card-media">
-        <img src="${p.image}" alt="${p.title}" />
+        <img src="${p.image}" alt="${p.title}" loading="lazy" decoding="async" />
       </div>
       <h4 class="project-card-title">${p.title}${p.subtitle ? `, ${p.subtitle}` : ''}</h4>
       <span class="project-card-link">View Project →</span>

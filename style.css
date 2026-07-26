@@ -933,8 +933,10 @@ body.cursor-hover .cursor-ring { width: 64px; height: 64px; opacity: 0.55; }
 
 /* Hide the native pointer only on real mouse devices */
 @media (hover: hover) and (pointer: fine) {
-  body, a, button, .btn, .project-card, .expertise-row { cursor: auto; }
-  /* keep the real pointer where precision matters */
+  body { cursor: auto; }
+  /* clickable things get the hand pointer */
+  a, button, .btn, .project-card, .expertise-row { cursor: pointer; }
+  /* keep the text/precision cursor where it matters */
   video, input, textarea, select { cursor: auto; }
 }
 /* Touch devices — no custom cursor at all */

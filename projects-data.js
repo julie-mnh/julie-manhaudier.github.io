@@ -7,6 +7,7 @@ const PROJECTS_DATA = [
   { title: 'Rendez-vous', subtitle: 'The interview series', image: 'Media/cover_rendezvousvignette.jpeg',  slug: 'rendez-vous',                        featured: true  },
   { title: 'Summer Courses Campaign',            image: 'Media/cover-pub.jpg',         slug: 'summer-courses-campaign',            featured: true  },
   { title: 'Educational and Cultural Content',   image: 'Media/cover-trott.jpg',       slug: 'educational-and-cultural-content',   featured: true  },
+  { title: 'Sponsor Interviews', image: 'Media/cover_sponsor.png', slug: 'festival-cine-frances-sponsor-interviews', featured: false },
 ];
 
 function renderProjectCards(containerId, { featuredOnly = false } = {}) {

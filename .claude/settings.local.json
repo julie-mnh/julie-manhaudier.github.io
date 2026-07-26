@@ -17,7 +17,9 @@
       "Bash(pkill -f \"http.server\")",
       "Bash(open http://localhost:3333)",
       "Bash(pkill -f \"python3.*3333\")",
-      "Bash(python3 /Users/juliemanhaudier/Desktop/my-site/serve.py)"
+      "Bash(python3 /Users/juliemanhaudier/Desktop/my-site/serve.py)",
+      "Bash(python3 serve.py)",
+      "Bash(curl -s -m 5 -o /dev/null -w \"%{http_code}\" http://127.0.0.1:3333/projects/festival-cine-frances-sponsor-interviews.html)"
     ]
   }
 }

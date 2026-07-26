@@ -904,6 +904,7 @@ footer p { font-size: .78rem; color: var(--muted); }
    they read black on the cream pages, white on the dark project pages.
 ════════════════════════ */
 .cursor-dot {
+  display: none; /* custom cursor disabled — native pointer restored */
   width: 8px; height: 8px;
   background: #fff;
   mix-blend-mode: difference;
@@ -915,6 +916,7 @@ footer p { font-size: .78rem; color: var(--muted); }
   pointer-events: none;
 }
 .cursor-ring {
+  display: none; /* custom cursor disabled — native pointer restored */
   width: 40px; height: 40px;
   border: 1.5px solid #fff;
   mix-blend-mode: difference;
@@ -931,7 +933,7 @@ body.cursor-hover .cursor-ring { width: 64px; height: 64px; opacity: 0.55; }
 
 /* Hide the native pointer only on real mouse devices */
 @media (hover: hover) and (pointer: fine) {
-  body, a, button, .btn, .project-card, .expertise-row { cursor: none; }
+  body, a, button, .btn, .project-card, .expertise-row { cursor: auto; }
   /* keep the real pointer where precision matters */
   video, input, textarea, select { cursor: auto; }
 }

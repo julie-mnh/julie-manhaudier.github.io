@@ -8,6 +8,8 @@ const PROJECTS_DATA = [
   { title: 'Summer Courses Campaign',            image: 'Media/cover-pub.jpg',         slug: 'summer-courses-campaign',            featured: true  },
   { title: 'Educational and Cultural Content',   image: 'Media/cover-trott.jpg',       slug: 'educational-and-cultural-content',   featured: true  },
   { title: 'Sponsor Interviews', image: 'Media/cover_sponsor.png', slug: 'festival-cine-frances-sponsor-interviews', featured: false },
+  // WIP — en attente des médias (cover + vidéos). À décommenter quand cover_voxpops.jpg existe :
+  // { title: 'Festival vox pops', image: 'Media/cover_voxpops.jpg', slug: 'festival-vox-pops', featured: false },
 ];
 
 function renderProjectCards(containerId, { featuredOnly = false } = {}) {

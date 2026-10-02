@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Festival vox pops | Julie Manhaudier</title>
+  <link rel="icon" href="../Media/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Festival vox pops — cinema poster page treatment ── */
+    body { background: #000000; color: #F5F1EA; --accent: #FFFFFF; --ink: #F5F1EA; }
+
+    .rdv-back {
+      position: fixed; top: 2rem; left: 6vw; z-index: 50;
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-family: var(--sans); font-size: .82rem; font-weight: 500;
+      color: #F5F1EA; text-decoration: none;
+      padding: .55rem 1.15rem; border-radius: 4px;
+      border: 1px solid rgba(245,241,234,0.25);
+      background: rgba(0,0,0,0.35); backdrop-filter: blur(8px);
+      transition: border-color .2s, background .2s;
+    }
+    .rdv-back:hover { border-color: var(--accent); background: rgba(0,0,0,0.65); }
+
+    /* ── Hero ── */
+    .rdv-hero { position: relative; width: 100vw; height: 88vh; overflow: hidden; }
+    .rdv-hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 25%;
+    }
+    .rdv-hero-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, #000000 0%, rgba(0,0,0,0.72) 30%, rgba(0,0,0,0) 62%);
+    }
+    .rdv-hero-content {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 2rem;
+      padding: 0 6vw 5.5vh;
+    }
+    .rdv-eyebrow {
+      display: block; font-family: var(--sans); font-size: .74rem; font-weight: 500;
+      letter-spacing: 0; color: rgba(245,241,234,0.6);
+      margin-bottom: 1.1rem;
+    }
+    .rdv-title {
+      font-family: var(--sans); font-weight: 600; font-style: normal;
+      font-size: clamp(44px, 6.5vw, 96px);
+      line-height: 1.05; letter-spacing: -0.02em; color: #F5F1EA;
+    }
+    .rdv-hero-credits {
+      display: flex; flex-direction: column; align-items: flex-end; gap: .45rem;
+      text-align: right; flex-shrink: 0; padding-bottom: .6rem;
+      font-family: var(--sans); font-size: .82rem; letter-spacing: 0;
+      color: rgba(245,241,234,0.65);
+    }
+
+    /* ── Sections ── */
+    .rdv-section { padding: 48px 6vw; border-bottom: 1px solid rgba(245,241,234,0.12); }
+    .rdv-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; }
+    .rdv-col-title {
+      font-family: var(--sans); font-size: 24px; font-weight: 600; letter-spacing: -0.01em;
+      color: #F5F1EA; margin-bottom: 1.2rem;
+    }
+    .rdv-body { font-size: 17px; line-height: 1.8; color: rgba(245,241,234,0.65); }
+
+    /* ── Top: phone + concept / process / stats, centered ── */
+    .rdv-top { display: grid; grid-template-columns: 300px minmax(0, 560px); gap: 4vw; align-items: center; justify-content: center; }
+    .rdv-top-media { display: flex; justify-content: center; }
+    .rdv-top-text { display: flex; flex-direction: column; gap: 2.4rem; }
+    .rdv-top-stats {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem 2rem;
+      border-top: 1px solid rgba(245,241,234,0.15); padding-top: 1.8rem;
+    }
+    /* ── What I learned — centered ── */
+    .rdv-section.rdv-learn-section { text-align: center; padding-top: 26px; padding-bottom: 26px; }
+    .rdv-learn-section .rdv-body { max-width: 62ch; margin: 1rem auto 0; }
+
+    /* ── Watch a video — video grid with captions ── */
+    .rdv-episodes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; justify-items: center; }
+    .rdv-episode-item { display: flex; flex-direction: column; align-items: center; }
+    .rdv-episode-item video {
+      display: block; width: 100%; max-width: 300px; aspect-ratio: 9 / 16; object-fit: cover;
+      border-radius: 14px; box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+      background: #000;
+    }
+    .rdv-episode-cap {
+      display: block; margin-top: .9rem;
+      font-family: var(--sans); font-size: .82rem; color: rgba(245,241,234,0.6);
+      text-align: center;
+    }
+
+    /* ── Stats — end credits ── */
+    .rdv-stat { display: flex; flex-direction: column; }
+    .rdv-stat-num {
+      font-family: var(--sans); font-weight: 700; color: var(--accent);
+      font-size: clamp(34px, 4.5vw, 58px); line-height: 1; margin-bottom: .6rem;
+    }
+    .rdv-stat-lbl {
+      font-family: var(--sans); font-size: .7rem; letter-spacing: 0; color: rgba(245,241,234,0.65);
+    }
+
+    @media (max-width: 820px) {
+      .rdv-hero { height: 70vh; }
+      .rdv-hero-content { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
+      .rdv-hero-credits { align-items: flex-start; text-align: left; }
+      .rdv-section { padding: 48px 6vw; }
+      .rdv-two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+      .rdv-top { grid-template-columns: 1fr; gap: 2.5rem; }
+      .rdv-episodes-grid {
+        display: flex; grid-template-columns: unset;
+        overflow-x: auto; scroll-snap-type: x mandatory;
+        gap: 1.2rem; justify-content: flex-start;
+        padding-bottom: .5rem; margin: 0 -6vw; padding-left: 6vw; padding-right: 6vw;
+      }
+      .rdv-episode-item { flex: 0 0 auto; scroll-snap-align: center; }
+      .rdv-episode-item video { width: 70vw; max-width: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="../projects.html" class="rdv-back">← Back to Projects</a>
+
+  <section class="rdv-hero">
+    <img class="rdv-hero-img" src="../Media/cover_voxpops.jpg" alt="Festival vox pops" />
+    <div class="rdv-hero-gradient"></div>
+    <div class="rdv-hero-content">
+      <div class="rdv-hero-left">
+        <span class="rdv-eyebrow">Festival de Cine Francés de Málaga</span>
+        <h1 class="rdv-title">Vox pops</h1>
+      </div>
+      <div class="rdv-hero-credits">
+        <span>Street interviews</span>
+        <span>Bilingual interviews</span>
+        <span>Video editing</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="rdv-section rdv-top">
+    <div class="rdv-top-media">
+      <div class="phone-scene">
+        <div class="phone-glow"></div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <video class="phone-video" src="../Media/voxpops.mp4" autoplay muted loop playsinline></video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rdv-top-text">
+      <div>
+        <h2 class="rdv-col-title">The concept</h2>
+        <p class="rdv-body">During the Festival de Cine Francés de Málaga, I created a series of five vox pop videos, one for each of five different films. The idea was to catch the audience right as they walked out of the screening and capture their reactions while the emotion was still fresh: what the film made them feel, what stayed with them, what they wanted to say in the moment.</p>
+      </div>
+      <div>
+        <h2 class="rdv-col-title">The process</h2>
+        <p class="rdv-body">I teamed up with the festival's press officer, who filmed me so I could stay focused on the people while still getting the shots I needed. I knew I'd be facing a mostly Spanish-speaking crowd, so I prepared my questions in Spanish, even though my Spanish was still shaky at that point. The hardest part wasn't the language though, it was convincing strangers to step in front of the camera. Some screenings ended at 10pm or even midnight, when most people just want to go home. So I had to find a way to approach them without scaring anyone off with a mic and a camera. Then I edited each video the same night and published it the next day, so it stayed in sync with the festival program.</p>
+      </div>
+      <div class="rdv-top-stats">
+        <div class="rdv-stat">
+          <span class="rdv-stat-num">10K+</span>
+          <span class="rdv-stat-lbl">Views</span>
+        </div>
+        <div class="rdv-stat">
+          <span class="rdv-stat-num">5</span>
+          <span class="rdv-stat-lbl">Videos produced</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rdv-section rdv-learn-section">
+    <h2 class="rdv-col-title">What I learned</h2>
+    <p class="rdv-body">Vox pop is probably the hardest format I've worked in. You have to project confidence, walk straight up to people you don't know, accept that plenty of them will say no, and keep going anyway. It pushed me well out of my comfort zone. But once you're past that first hurdle it gets easier, and the refusals stop stinging. I learned that the whole thing lives or dies in the first few seconds of an approach, in how you carry yourself before you've even asked a question.</p>
+  </section>
+
+  <section class="rdv-section">
+    <h2 class="rdv-col-title" style="margin-bottom: 2rem;">Watch a video</h2>
+    <div class="rdv-episodes-grid">
+      <div class="rdv-episode-item">
+        <video controls playsinline preload="metadata" poster="../Media/cover_voxpop1.jpg">
+          <source src="../Media/voxpop1.mp4" type="video/mp4" />
+        </video>
+        <span class="rdv-episode-cap">Film 1</span>
+      </div>
+      <div class="rdv-episode-item">
+        <video controls playsinline preload="metadata" poster="../Media/cover_voxpop2.jpg">
+          <source src="../Media/voxpop2.mp4" type="video/mp4" />
+        </video>
+        <span class="rdv-episode-cap">Film 2</span>
+      </div>
+      <div class="rdv-episode-item">
+        <video controls playsinline preload="metadata" poster="../Media/cover_voxpop3.jpg">
+          <source src="../Media/voxpop3.mp4" type="video/mp4" />
+        </video>
+        <span class="rdv-episode-cap">Film 3</span>
+      </div>
+      <div class="rdv-episode-item">
+        <video controls playsinline preload="metadata" poster="../Media/cover_voxpop4.jpg">
+          <source src="../Media/voxpop4.mp4" type="video/mp4" />
+        </video>
+        <span class="rdv-episode-cap">Film 4</span>
+      </div>
+      <div class="rdv-episode-item">
+        <video controls playsinline preload="metadata" poster="../Media/cover_voxpop5.jpg">
+          <source src="../Media/voxpop5.mp4" type="video/mp4" />
+        </video>
+        <span class="rdv-episode-cap">Film 5</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis/dist/lenis.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (typeof Lenis !== 'undefined') {
+      const lenis = new Lenis();
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    gsap.fromTo('.rdv-hero-left', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' });
+    gsap.fromTo('.rdv-hero-credits', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: .2 });
+
+    document.querySelectorAll('.rdv-section').forEach((section) => {
+      gsap.fromTo(section, { y: 30, opacity: 0 }, {
+        y: 0, opacity: 1, duration: .8, ease: 'power2.out',
+        scrollTrigger: { trigger: section, start: 'top 85%', once: true }
+      });
+    });
+
+    gsap.fromTo('.rdv-stat', { y: 20, opacity: 0 }, {
+      y: 0, opacity: 1, duration: .6, stagger: .1, ease: 'power2.out',
+      scrollTrigger: { trigger: '.rdv-top-stats', start: 'top 92%', once: true }
+    });
+
+    const episodeVideos = document.querySelectorAll('.rdv-episode-item video');
+    episodeVideos.forEach((v) => {
+      v.addEventListener('play', () => {
+        episodeVideos.forEach((other) => { if (other !== v) other.pause(); });
+      });
+    });
+  </script>
+</body>
+</html>
